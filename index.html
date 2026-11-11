@@ -1,0 +1,975 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A Vida que Vem Depois · Workshop online · Escola Travessias</title>
+<meta name="description" content="Workshop de processos criativos para trabalhar o encerramento de ciclos, investigar valores, rever escolhas e traçar recomeço. Domingo, 13 de dezembro de 2026, das 9AM às 12PM, online e ao vivo.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="A Vida que Vem Depois · Workshop online">
+<meta property="og:description" content="Conquiste a coragem de demolir estruturas em colapso para construir uma vida que volte a ter sentido.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&family=Schibsted+Grotesk:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+
+<style>
+/* ============================================================
+   AJUSTES RÁPIDOS
+   Tamanho dos blocos de imagem. Troque aqui e todos mudam.
+   ============================================================ */
+:root {
+  --convite-altura: 480px;     /* imagem01 no computador · sugestão 2400 x 960 px */
+  --convite-ratio-cel: 5 / 2;  /* imagem01 no tablet e no celular */
+  --ratio-simbolo: 1 / 1;      /* imagem02 a imagem07 · quadradas · sugestão 600 x 600 px */
+  --destaque: #B8401E;         /* cor dos botões de compra */
+  --destaque-hover: #8F3216;   /* a mesma cor, mais escura, ao passar o mouse */
+  --vermelho: #B8401E;         /* fundo da sequência [ estudar → ... ] (sessão 01) */
+  --verde: #2F6B3F;            /* sinal de confirmação nas listas dos ingressos */
+}
+
+/* ============================================================
+   ACERVO · tokens (de tokens.css)
+   ============================================================ */
+:root, [data-theme="papel"] {
+  --base-papel: #f4f3ef; --base-branco: #ffffff; --base-jornal: #e9e5dc; --base-cha: #e4e5d7;
+  --base-nevoa: #eae6e5; --base-areia: #d6d0c4; --base-salvia: #c9c9b1; --base-rose: #d8cecc;
+  --base-cinza: #d3d3d3; --base-grafite: #474642; --base-tinta: #121212; --base-carvao: #161616;
+  --base-sepia: #211e19; --base-preto: #000000;
+  --surface: var(--base-papel); --surface-raised: var(--base-branco); --media: var(--base-cinza);
+  --ink: var(--base-tinta); --ink-soft: var(--base-grafite); --ink-muted: #5c5a55;
+  --rule: var(--ink); --rule-soft: #12121229; --ink-ghost: #1212121c; --bar: var(--ink);
+  --on-ink: var(--surface); --focus: var(--ink);
+}
+[data-theme="branco"] {
+  --surface: var(--base-branco); --surface-raised: var(--base-papel); --media: var(--base-cinza);
+  --ink: var(--base-tinta); --ink-soft: var(--base-grafite); --ink-muted: #5c5a55;
+  --rule: var(--ink); --rule-soft: #12121229; --ink-ghost: #1212121c; --bar: var(--ink);
+  --on-ink: var(--surface); --focus: var(--ink);
+}
+[data-theme="jornal"] {
+  --surface: var(--base-jornal); --surface-raised: var(--base-papel); --media: var(--base-cinza);
+  --ink: var(--base-tinta); --ink-soft: var(--base-grafite); --ink-muted: #55524c;
+  --rule: var(--ink); --rule-soft: #12121229; --ink-ghost: #1212121c; --bar: var(--ink);
+  --on-ink: var(--surface); --focus: var(--ink);
+}
+[data-theme="areia"] {
+  --surface: var(--base-areia); --surface-raised: var(--base-jornal); --media: #c2bbae;
+  --ink: var(--base-tinta); --ink-soft: var(--base-grafite); --ink-muted: #4a4741;
+  --rule: var(--ink); --rule-soft: #12121229; --ink-ghost: #1212121c; --bar: var(--ink);
+  --on-ink: var(--surface); --focus: var(--ink);
+}
+[data-theme="salvia"] {
+  --surface: var(--base-salvia); --surface-raised: var(--base-cha); --media: #b6b69c;
+  --ink: var(--base-tinta); --ink-soft: #3d3d33; --ink-muted: #45453a;
+  --rule: var(--ink); --rule-soft: #12121229; --ink-ghost: #1212121c; --bar: var(--ink);
+  --on-ink: var(--surface); --focus: var(--ink);
+}
+[data-theme="preto"] {
+  --surface: var(--base-preto); --surface-raised: var(--base-carvao); --media: var(--base-sepia);
+  --ink: var(--base-papel); --ink-soft: var(--base-cinza); --ink-muted: #a8a6a0;
+  --rule: var(--ink); --rule-soft: #f4f3ef33; --ink-ghost: #f4f3ef1f; --bar: var(--ink);
+  --on-ink: var(--surface); --focus: var(--ink);
+}
+:root {
+  --space-1: 4px; --space-2: 8px; --space-3: 12px; --space-4: 16px; --space-5: 24px;
+  --space-6: 32px; --space-7: 48px; --space-8: 64px; --space-9: 96px; --space-10: 144px;
+  --radius-none: 0px; --radius-soft: 6px; --radius-pill: 999px;
+  --stroke-hair: 1px; --stroke-bar: 8px; --stroke-band: 14px;
+  --layout-max: 1440px; --layout-text: 640px;
+  --font-sans: "Schibsted Grotesk", "Helvetica Neue", Arial, sans-serif;
+  --font-serif: "Newsreader", Georgia, "Times New Roman", serif;
+  --font-mono: "DM Mono", "Courier New", ui-monospace, monospace;
+}
+
+/* tipografia */
+.display-xl { font-family: var(--font-sans); font-size: 168px; line-height: 0.86; font-weight: 800; letter-spacing: -0.05em; }
+.display-l { font-family: var(--font-sans); font-size: 104px; line-height: 0.9; font-weight: 700; letter-spacing: -0.04em; }
+.display-l-light { font-family: var(--font-sans); font-size: 104px; line-height: 0.9; font-weight: 400; letter-spacing: -0.04em; }
+.headline { font-family: var(--font-sans); font-size: 64px; line-height: 0.95; font-weight: 700; letter-spacing: -0.035em; }
+.headline-light { font-family: var(--font-sans); font-size: 64px; line-height: 0.95; font-weight: 400; letter-spacing: -0.035em; }
+.serif-display { font-family: var(--font-serif); font-size: 64px; line-height: 1.02; font-weight: 300; letter-spacing: -0.02em; font-variation-settings: 'opsz' 72; }
+.serif-title { font-family: var(--font-serif); font-size: 30px; line-height: 1.15; font-weight: 400; letter-spacing: -0.01em; font-variation-settings: 'opsz' 36; }
+.numeral { font-family: var(--font-mono); font-size: 80px; line-height: 0.95; font-weight: 300; letter-spacing: -0.04em; }
+.numeral-ghost { font-family: var(--font-mono); font-size: 320px; line-height: 0.8; font-weight: 300; letter-spacing: -0.06em; }
+.index { font-family: var(--font-mono); font-size: 32px; line-height: 1; font-weight: 300; letter-spacing: -0.02em; }
+.typed { font-family: var(--font-mono); font-size: 15px; line-height: 1.35; font-weight: 400; letter-spacing: 0.02em; }
+.field { font-family: var(--font-mono); font-size: 11px; line-height: 14px; font-weight: 500; letter-spacing: 0.06em; }
+.caption { font-family: var(--font-mono); font-size: 11px; line-height: 15px; font-weight: 400; letter-spacing: 0.02em; }
+.lead { font-family: var(--font-sans); font-size: 22px; line-height: 1.36; font-weight: 400; letter-spacing: -0.01em; }
+.body { font-family: var(--font-sans); font-size: 17px; line-height: 1.55; font-weight: 400; }
+.body-s { font-family: var(--font-sans); font-size: 14px; line-height: 1.45; font-weight: 400; }
+.label { font-family: var(--font-sans); font-size: 12px; line-height: 16px; font-weight: 600; letter-spacing: 0.08em; }
+.label, .field, .typed, .caption { text-transform: uppercase; }
+.numeral, .numeral-ghost, .index, .caption, .field, .typed { font-variant-numeric: tabular-nums slashed-zero; }
+.it { font-family: var(--font-serif); font-style: italic; font-weight: 400; letter-spacing: -0.02em; font-variation-settings: 'opsz' 72; }
+.up { text-transform: uppercase; }
+
+@media (max-width: 719px) {
+  .display-xl { font-size: 72px; }
+  .display-l, .display-l-light { font-size: 52px; }
+  .headline, .headline-light { font-size: 40px; }
+  .numeral { font-size: 48px; }
+  .numeral-ghost { font-size: 160px; }
+  .index { font-size: 28px; }
+  .serif-display { font-size: 40px; }
+}
+
+/* base */
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--surface); color: var(--ink); font-family: var(--font-sans); -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; text-align: justify; }
+/* texto justificado sem nunca quebrar palavra: a palavra que não cabe vai inteira para a linha de baixo */
+body, body * { -webkit-hyphens: none; hyphens: none; overflow-wrap: normal; word-break: normal; }
+h1, h2, h3, p, ul, ol, dl, dd, figure, blockquote { margin: 0; }
+a { color: inherit; }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+/* ============================================================
+   ACERVO · componentes (de components/bundle.css)
+   ============================================================ */
+
+/* Section */
+.ac-section { position: relative; overflow: hidden; background: var(--surface); color: var(--ink); padding: var(--space-9) var(--space-7); }
+.ac-section--hero { padding-top: var(--space-8); padding-bottom: var(--space-9); }
+.ac-section--rule { border-top: var(--stroke-hair) solid var(--rule); }
+.ac-section__inner { position: relative; z-index: 1; max-width: var(--layout-max); margin: 0 auto; }
+.ac-section .ac-section__inner > * + * { margin-top: var(--space-8); }
+.ac-section__mark { position: absolute; z-index: 0; top: var(--space-8); right: var(--space-7); color: var(--ink-ghost); pointer-events: none; user-select: none; white-space: nowrap; }
+@media (max-width: 719px) {
+  .ac-section { padding: var(--space-8) var(--space-5); }
+  .ac-section--hero { padding-top: var(--space-5); }
+  .ac-section__mark { display: none; }
+  .ac-section .ac-section__inner > * + * { margin-top: var(--space-7); }
+  /* sem fio duplo logo abaixo do título da seção */
+  .ac-legend__list > li:first-child { border-top: 0; padding-top: 0; }
+}
+
+/* Button */
+.ac-btn {
+  display: inline-flex; align-items: center; gap: var(--space-2);
+  height: 36px; padding: 0 var(--space-4);
+  border: var(--stroke-hair) solid var(--rule); border-radius: var(--radius-pill);
+  background: transparent; color: var(--ink); text-decoration: none; white-space: nowrap; cursor: pointer;
+  transition: background-color 160ms ease, color 160ms ease;
+}
+.ac-btn--l { height: 48px; padding: 0 var(--space-5); }
+.ac-btn--xl { height: 60px; padding: 0 var(--space-6); font-size: 14px; gap: var(--space-3); }
+.ac-btn--destaque { background: var(--destaque); color: var(--base-papel); border-color: var(--destaque); }
+.ac-btn--destaque:hover { background: var(--destaque-hover); border-color: var(--destaque-hover); color: var(--base-papel); }
+.ac-btn--solid { background: var(--ink); color: var(--on-ink); border-color: var(--ink); }
+.ac-btn--outline:hover { background: var(--ink); color: var(--on-ink); }
+.ac-btn--solid:hover { background: transparent; color: var(--ink); }
+@media (max-width: 719px) {
+  .ac-btn--l, .ac-btn--xl { width: 100%; height: auto; min-height: 48px; padding: var(--space-3) var(--space-5); white-space: normal; justify-content: space-between; text-align: left; }
+  .ac-btn--xl { min-height: 60px; }
+}
+
+/* Masthead */
+.ac-mast { background: var(--surface); color: var(--ink); border-bottom: var(--stroke-hair) solid var(--rule); }
+.ac-mast__inner { max-width: calc(var(--layout-max) + 2 * var(--space-7)); margin: 0 auto; padding: var(--space-4) var(--space-7); display: flex; align-items: center; gap: var(--space-6); }
+.ac-mast__brand { color: inherit; text-decoration: none; font-weight: 800; letter-spacing: -0.03em; white-space: nowrap; }
+.ac-mast__meta { flex: 1; display: flex; justify-content: flex-end; flex-wrap: wrap; gap: var(--space-2) var(--space-6); list-style: none; margin: 0; padding: 0; color: var(--ink-muted); }
+@media (max-width: 719px) {
+  .ac-mast__inner { padding: var(--space-4) var(--space-5); flex-direction: column; align-items: flex-start; gap: var(--space-2); }
+  .ac-mast__brand { font-size: 20px; }
+  .ac-mast__meta { justify-content: flex-start; gap: var(--space-1) var(--space-3); }
+}
+
+/* SectionHeader */
+.ac-sh__top { display: flex; gap: var(--space-4); margin: 0 0 var(--space-4); color: var(--ink-muted); }
+.ac-sh__index { color: var(--ink); }
+.ac-sh__row { display: flex; align-items: flex-end; justify-content: space-between; gap: var(--space-6); border-bottom: var(--stroke-hair) solid var(--rule); padding-bottom: var(--space-4); }
+.ac-sh__title { margin: 0; }
+.ac-sh__title span { display: block; }
+.ac-sh__row--sem-fio { border-bottom: 0; padding-bottom: 0; }
+/* títulos das sessões 02 em diante: únicos textos alinhados à esquerda (o resto do site é justificado) */
+.headline.ac-sh__title { text-align: left; }
+
+/* Media */
+.ac-media { margin: 0; position: relative; }
+.ac-media__frame { position: relative; background: var(--media); width: 100%; }
+.ac-media__img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; border-radius: var(--radius-none); }
+.ac-media__ph { position: absolute; left: var(--space-3); bottom: var(--space-3); right: var(--space-3); color: var(--ink-muted); }
+.ac-media__frame.is-loaded .ac-media__ph { display: none; }
+.ac-media__bar { position: absolute; background: var(--bar); }
+.ac-media__bar--left { left: calc(-1 * var(--stroke-bar)); top: 0; width: var(--stroke-bar); height: 72%; }
+.ac-media__cap { margin-top: var(--space-2); color: var(--ink-muted); }
+.r-convite { aspect-ratio: var(--convite-ratio-cel); }
+@media (min-width: 1101px) { .r-convite { aspect-ratio: auto; height: var(--convite-altura); } }
+.r-simbolo { aspect-ratio: var(--ratio-simbolo); }
+
+/* PosterBlock (barra vertical do título de cartaz) */
+.ac-poster__bar { position: absolute; top: 0; right: 0; bottom: 0; width: var(--stroke-bar); background: var(--bar); }
+
+/* NumberedCard */
+.ac-ncard { display: grid; grid-template-columns: repeat(var(--ac-cols, 4), minmax(0, 1fr)); gap: var(--space-7) var(--space-5); align-items: start; list-style: none; margin: 0; padding: 0; }
+.ac-ncard__index { color: var(--ink-soft); margin: 0 0 var(--space-4); }
+.ac-ncard__title { margin: var(--space-4) 0 var(--space-2); }
+.ac-ncard__text { margin: 0; color: var(--ink-muted); letter-spacing: 0.06em; }
+
+/* Legend */
+.ac-legend__list { list-style: none; margin: 0; padding: 0; display: grid; gap: 0 var(--space-7); }
+.ac-legend__list--2 { grid-template-columns: 1fr 1fr; }
+.ac-legend__item { display: grid; grid-template-columns: var(--space-7) 1fr; gap: var(--space-2); padding: var(--space-4) 0; border-top: var(--stroke-hair) solid var(--rule-soft); align-items: baseline; }
+.ac-legend__n { color: var(--ink-muted); }
+.ac-legend__title { margin: 0; font-weight: 500; }
+@media (max-width: 719px) { .ac-legend__list--2 { grid-template-columns: 1fr; } }
+
+/* Tag */
+.ac-tag { display: inline-flex; align-items: center; height: 22px; padding: 0 var(--space-3); border: var(--stroke-hair) solid var(--rule); border-radius: var(--radius-pill); color: var(--ink); white-space: nowrap; }
+
+/* Stat */
+.ac-stat { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: var(--space-6); margin: 0; }
+.ac-stat__item { display: flex; flex-direction: column; gap: var(--space-4); align-items: flex-start; }
+.ac-stat__item dt, .ac-stat__value { margin: 0; }
+.ac-stat__suffix { color: var(--ink-muted); font-size: 0.5em; letter-spacing: 0; }
+
+/* Quote */
+.ac-quote { margin: 0; border-top: var(--stroke-hair) solid var(--rule); padding-top: var(--space-4); display: flex; flex-direction: column; gap: var(--space-4); }
+.ac-quote__n { color: var(--ink-muted); }
+.ac-quote__text { max-width: var(--layout-text); }
+.ac-quote__by { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-2) var(--space-4); margin-top: auto; }
+
+/* InfoFooter */
+.ac-foot { display: flex; gap: var(--space-6); align-items: flex-start; border-top: var(--stroke-hair) solid var(--rule); padding-top: var(--space-5); }
+.ac-foot__brand { flex: 2 1 0; margin: 0; font-weight: 700; }
+.ac-foot__col { flex: 1 1 0; margin: 0; display: flex; flex-direction: column; }
+@media (max-width: 719px) { .ac-foot { flex-wrap: wrap; } .ac-foot__brand { flex-basis: 100%; } .ac-foot__col { flex-basis: 40%; } }
+
+/* ============================================================
+   PÁGINA · A Vida que Vem Depois
+   ============================================================ */
+
+.grid12 { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: var(--space-6); align-items: start; }
+.stack > * + * { margin-top: var(--space-5); }
+.muted { color: var(--ink-muted); }
+.text { max-width: var(--layout-text); }
+
+/* lista curta com ■ */
+.sq { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--space-3); }
+.sq li { display: grid; grid-template-columns: var(--space-5) 1fr; align-items: baseline; }
+.sq li::before { content: "■"; font-size: 0.6em; line-height: 1; }
+
+/* 00 · abertura */
+.hero__media { margin-bottom: var(--space-7); }
+.hero__grid { row-gap: var(--space-6); }
+/* abertura empilhada em todos os dispositivos: nome em cima, e tudo o que vem depois logo abaixo dele */
+.hero__title { grid-column: 1 / -1; text-transform: uppercase; font-weight: 900; }
+.hero__copy { grid-column: 1 / -1; max-width: 900px; display: flex; flex-direction: column; gap: var(--space-6); }
+.hero__headline { font-family: var(--font-sans); font-size: 45px; line-height: 1.02; font-weight: 700; letter-spacing: -0.03em; }
+.hero__sub { margin-top: calc(-1 * var(--space-3)); font-size: 27px; }  /* 5 px a mais que o padrão de 22 px, em todos os dispositivos */
+/* caixa de detalhes */
+.ficha { display: grid; grid-template-columns: 1fr 1fr; border: var(--stroke-hair) solid var(--rule); }
+.ficha > div { padding: var(--space-4) var(--space-4) var(--space-5); }
+.ficha > div:nth-child(odd) { border-right: var(--stroke-hair) solid var(--rule); }
+.ficha > div:nth-child(-n+2) { border-bottom: var(--stroke-hair) solid var(--rule); }
+.ficha dt { color: var(--ink-muted); margin-bottom: var(--space-2); }
+.ficha .caption { display: block; margin-top: var(--space-1); color: var(--ink-muted); }
+
+/* 01 · pergunta (mesmo tamanho e peso da frase da abertura) */
+.pergunta { display: block; font-family: var(--font-sans); font-size: 45px; line-height: 1.02; font-weight: 700; letter-spacing: -0.03em; }
+@media (max-width: 719px) { .pergunta { font-size: 30px; line-height: 1.05; letter-spacing: -0.025em; } }
+.ask .subtitulo { max-width: 760px; }
+.marca { font-weight: 700; }
+.marca--nobreak { white-space: nowrap; }
+.seq { display: flex; flex-wrap: wrap; gap: var(--space-2) var(--space-3); width: fit-content; max-width: 100%; margin-top: var(--space-6); padding: var(--space-3) var(--space-4); background: var(--vermelho); color: var(--base-papel); font-weight: 700; }
+.seq span span { display: inline; }
+/* uma pergunta por linha: número à esquerda, texto à direita (no celular, número em cima) */
+.qs { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: 1fr; gap: var(--space-6); }
+.qs li { display: grid; grid-template-columns: 110px minmax(0, 1fr); align-items: center; gap: var(--space-5); }
+/* números 01 02 03: 73 px (celular 48 px), sem negrito, vermelho a 50% */
+.qs__n { font-family: var(--font-mono); font-size: 73px; line-height: 0.85; font-weight: 300; letter-spacing: -0.04em; color: var(--vermelho); opacity: 0.5; font-variant-numeric: tabular-nums slashed-zero; }
+/* perguntas: 1/3 maiores que o texto "Talvez..." (29 px; celular 25 px), sem negrito */
+.qs__t { max-width: 760px; font-family: var(--font-sans); font-size: 29px; line-height: 1.28; font-weight: 400; letter-spacing: -0.015em; }
+/* "É sobre perguntas...": mesmo tamanho das perguntas (29 px; celular 25 px), em negrito */
+.fecho { max-width: 760px; font-family: var(--font-sans); font-size: 29px; line-height: 1.28; font-weight: 700; letter-spacing: -0.015em; }
+@media (max-width: 719px) {
+  .qs { gap: var(--space-7); }
+  .qs li { display: flex; flex-direction: column; align-items: flex-start; gap: var(--space-4); }
+  .qs__n { font-size: 48px; }
+  .qs__t, .fecho { font-size: 25px; }
+}
+/* menos espaço entre o título da sessão e o texto */
+.ac-section.sec-perguntas .ac-section__inner > .ask { margin-top: var(--space-5); }
+
+/* 02 · o que é */
+.what { max-width: 760px; }
+.what > p + p { margin-top: var(--space-5); }
+.band { background: var(--ink); color: var(--on-ink); padding: var(--space-5) var(--space-6); display: flex; gap: var(--space-5); align-items: center; }
+.band__ast { flex: none; width: 44px; height: 44px; }
+/* seta grossa desenhada (a fonte não tem o caractere →, então ele mudava de peso conforme o aparelho) */
+.what__arrow { display: inline-block; width: 0.95em; height: 0.66em; margin-right: 0.35em; vertical-align: 0; }
+
+/* 03 · percurso */
+.cards3 { --ac-cols: 3; }
+/* sem degraus: números e imagens de cada linha alinhados na mesma altura, da esquerda para a direita */
+/* números 64 px, imagem quadrada 280 px, título na fonte do nome do workshop, descrição na fonte de datilografia (DM Mono) */
+.cards3 .ac-ncard__index { font-size: 64px; letter-spacing: -0.04em; }
+/* cada etapa tem a largura da imagem: número, imagem, título e texto alinhados nas mesmas bordas */
+.cards3 > li { width: 280px; max-width: 100%; }
+.cards3 .ac-media { width: 100%; }
+.cards3 .ac-ncard__title { margin: var(--space-5) 0 var(--space-3); font-family: var(--font-sans); font-size: 22px; line-height: 1.05; font-weight: 900; letter-spacing: -0.03em; font-variation-settings: normal; }
+.cards3 .ac-ncard__text { font-family: var(--font-mono); font-size: 22px; line-height: 1.45; font-weight: 400; letter-spacing: 0.04em; text-transform: uppercase; color: var(--ink-muted); }
+
+/* 04 · material: quadro de 3 linhas x 2 colunas (celular: 6 x 1) */
+.ac-section .ac-section__inner > .kit { margin-top: var(--space-6); }
+.kit { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; border-top: var(--stroke-hair) solid var(--rule); }
+.kit li { position: relative; display: flex; align-items: center; gap: var(--space-5); padding: var(--space-6) var(--space-7) var(--space-6) var(--space-5); border-bottom: var(--stroke-hair) solid var(--rule); }
+.kit li::before { content: ""; position: absolute; left: 0; top: var(--space-5); bottom: var(--space-5); width: var(--stroke-hair); background: var(--rule); }
+/* pictogramas pixelados 16 x 16: 1/3 menores que antes (64 → 43 px; celular 48 → 32 px) */
+.kit__ico { flex: none; width: 43px; height: 43px; color: var(--ink); }
+.kit__t { font-family: var(--font-sans); font-size: 18px; line-height: 1.4; font-weight: 500; }
+@media (max-width: 719px) {
+  .kit { grid-template-columns: 1fr; }
+  .kit li { padding: var(--space-5) 0 var(--space-5) var(--space-4); gap: var(--space-4); }
+  .kit li::before { top: var(--space-4); bottom: var(--space-4); }
+  .kit__ico { width: 32px; height: 32px; }
+  .kit__t { font-size: 16px; }
+}
+
+/* 05 · ingressos */
+.offers { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-5); align-items: stretch; max-width: 1080px; }
+/* ingresso em formato de ficha: caixas de fio, rótulos datilografados, picote antes do preço */
+.tk { background: var(--surface-raised); border: var(--stroke-hair) solid var(--rule); display: flex; flex-direction: column; }
+.tk__head { display: flex; justify-content: space-between; padding: var(--space-3) var(--space-4) 0; color: var(--ink-muted); }
+.tk__title { padding: var(--space-2) var(--space-4) var(--space-4); font-family: var(--font-sans); font-size: 26px; line-height: 1; font-weight: 800; letter-spacing: -0.02em; text-transform: uppercase; }
+.tk__row { display: grid; grid-template-columns: 40px minmax(0, 1fr) 130px; border-top: var(--stroke-hair) solid var(--rule); }
+.tk__side { writing-mode: vertical-rl; transform: rotate(180deg); display: flex; align-items: center; justify-content: center; padding: var(--space-3) 0; border-left: var(--stroke-hair) solid var(--rule); letter-spacing: 0.12em; }
+.tk__cell { padding: var(--space-3) var(--space-4); }
+.tk__main { border-right: var(--stroke-hair) solid var(--rule); }
+.tk__stack > .tk__cell + .tk__cell { border-top: var(--stroke-hair) solid var(--rule); }
+.tk__lab { color: var(--ink-muted); margin-bottom: var(--space-2); }
+.tk__big { font-family: var(--font-mono); font-size: 36px; line-height: 1; font-weight: 300; letter-spacing: -0.03em; text-transform: uppercase; font-variant-numeric: tabular-nums slashed-zero; }
+.tk__list { flex: 1; border-top: var(--stroke-hair) solid var(--rule); }
+.tk__checks { list-style: none; margin: 0; padding: 0; }
+/* itens do ingresso no mesmo padrão dos outros textos do ingresso: DM Mono, caixa alta */
+.tk__checks li { display: grid; grid-template-columns: 16px 1fr; gap: var(--space-3); align-items: start; padding: var(--space-2) 0; font-family: var(--font-mono); font-size: 15px; line-height: 1.4; font-weight: 400; letter-spacing: 0.02em; text-transform: uppercase; }
+.tk__checks li + li { border-top: var(--stroke-hair) dotted var(--rule-soft); }
+/* quadradinho com sinal de confirmação verde, desenhado em CSS para ficar igual em qualquer aparelho */
+.tk__checks li { position: relative; }
+.tk__checks li::before { content: ""; display: block; width: 14px; height: 14px; margin-top: 3px; border: var(--stroke-hair) solid var(--ink); }
+.tk__checks li::after { content: ""; position: absolute; left: 5px; top: calc(var(--space-2) + 2.5px); width: 4px; height: 8px; border-right: 2px solid var(--verde); border-bottom: 2px solid var(--verde); transform: rotate(45deg); }
+.tk__stub { border-top: var(--stroke-hair) dashed var(--ink); padding: var(--space-4); display: flex; flex-direction: column; gap: var(--space-4); }
+.tk__value { font-family: var(--font-mono); font-size: 40px; line-height: 1; font-weight: 300; letter-spacing: -0.03em; font-variant-numeric: tabular-nums slashed-zero; }
+.tk__btn { width: 100%; justify-content: space-between; }
+/* três lotes lado a lado, cada um num quadradinho pontilhado */
+.tk__lotes { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-2); }
+.tk__lote { display: flex; align-items: center; gap: var(--space-4); border: var(--stroke-hair) dotted var(--ink); padding: var(--space-3) var(--space-2); }
+/* "LOTE 01" deitado na vertical, como o "SÁBADO" do ingresso, para sobrar espaço para o valor */
+.tk__lote .tk__lab { margin: 0; writing-mode: vertical-rl; transform: rotate(180deg); letter-spacing: 0.12em; white-space: nowrap; }
+.tk__lote .tk__value { white-space: nowrap; }  /* mesmo tamanho do preço do ingresso gravado (40 px) */
+@media (max-width: 1100px) {
+  .offers { grid-template-columns: 1fr; max-width: 560px; }
+}
+@media (max-width: 719px) {
+  .offers { max-width: none; }
+  .tk__row { grid-template-columns: 34px minmax(0, 1fr) 96px; }
+  .tk__title { font-size: 22px; }
+  .tk__big { font-size: 26px; }
+  /* celular: os três lotes continuam lado a lado em quadrados iguais.
+     o "R$" sobe para cima do número e o valor cresce até o limite do quadrado (no máximo 40 px).
+     o preço do ingresso gravado acompanha o mesmo tamanho. */
+  .tk__lotes { gap: var(--space-2); }
+  .tk__lote { padding: var(--space-3) 6px; gap: var(--space-2); }
+  .tk .tk__value { font-size: min(40px, calc(((100vw - 98px) / 3 - 36px) / 1.75)); }
+  .tk .tk__value .cur { display: block; margin: 0 0 4px; font-size: 13px; vertical-align: baseline; }
+  .tk__checks li { font-size: 13px; }
+  .tk__cell { padding: var(--space-3); }
+}
+.cur { font-size: 0.45em; letter-spacing: 0; margin-right: 0.15em; vertical-align: 0.65em; }
+
+/* 06 · para quem */
+/* para quem é: dois quadros simples de fio fino (como a caixa de detalhes da abertura), com quadradinho ✓ ou × em cada item */
+.fit { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-5); align-items: stretch; }
+.fit__box { border: var(--stroke-hair) solid var(--rule); }
+.fit__title { padding: var(--space-4) var(--space-5); border-bottom: var(--stroke-hair) solid var(--rule); font-family: var(--font-sans); font-size: 22px; line-height: 1.25; font-weight: 700; letter-spacing: -0.01em; }
+.fit__list { --pl: var(--space-5); list-style: none; margin: 0; padding: 0; }
+.fit__list li { position: relative; display: grid; grid-template-columns: 14px 1fr; gap: var(--space-3); align-items: start; padding: var(--space-4) var(--space-5) var(--space-4) var(--pl); font-family: var(--font-sans); font-size: 17px; line-height: 1.55; }
+.fit__list li + li { border-top: var(--stroke-hair) solid var(--rule); }
+.fit__list li::before { content: ""; display: block; width: 14px; height: 14px; margin-top: 6px; border: var(--stroke-hair) solid var(--ink); }
+.fit__list--sim li::after { content: ""; position: absolute; left: calc(var(--pl) + 5px); top: calc(var(--space-4) + 7.5px); width: 4px; height: 8px; border-right: 2px solid var(--verde); border-bottom: 2px solid var(--verde); transform: rotate(45deg); }
+.fit__list--nao li::after { content: ""; position: absolute; left: calc(var(--pl) + 3px); top: calc(var(--space-4) + 9px); width: 8px; height: 8px;
+  background: linear-gradient(45deg, transparent 41%, var(--vermelho) 41%, var(--vermelho) 59%, transparent 59%), linear-gradient(-45deg, transparent 41%, var(--vermelho) 41%, var(--vermelho) 59%, transparent 59%); }
+
+/* 07 · relatos */
+.quotes { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-8) var(--space-7); align-items: start; list-style: none; margin: 0; padding: var(--space-5) 0 0; }  /* cada papel com a altura do próprio relato */
+/* cada relato é um papelzinho preso com clipe, com uma folha atrás (sem sombra, como no resto do sistema) */
+.quotes > li { position: relative; display: flex; isolation: isolate; }
+.quotes > li::before { content: ""; position: absolute; z-index: 0; top: 6px; left: 6px; right: -6px; bottom: -6px; background: var(--base-jornal); border: var(--stroke-hair) solid var(--rule-soft); transform: rotate(1.2deg); }
+.nota { position: relative; z-index: 1; width: 100%; margin: 0; padding: var(--space-7) var(--space-6) var(--space-6); background: var(--base-papel); color: var(--base-tinta); display: flex; flex-direction: column; gap: var(--space-5); }
+.nota { border: var(--stroke-hair) solid var(--rule-soft); }
+.quotes > li:nth-child(odd) .nota { transform: rotate(-0.8deg); }
+.quotes > li:nth-child(even) .nota { transform: rotate(0.7deg); }
+.quotes > li:nth-child(even)::before { transform: rotate(-1deg); }
+.nota__clip { position: absolute; top: -22px; left: var(--space-6); width: 20px; height: 60px; color: #7a7874; transform: rotate(-6deg); }
+.nota__text { margin: 0; }
+.nota__by { margin-top: auto; color: var(--base-tinta); }
+
+/* 08 · dúvidas */
+/* perguntas frequentes: cada pergunta é um botão cru (borda de 1 px, igual aos outros fios do site), com + que vira − e abre a resposta logo abaixo */
+.faq { display: flex; flex-direction: column; gap: var(--space-4); max-width: 960px; }
+.faq__btn { display: flex; align-items: baseline; gap: var(--space-4); padding: var(--space-4) var(--space-5); border: var(--stroke-hair) solid var(--rule); background: transparent; color: var(--ink); cursor: pointer; list-style: none; transition: background-color 160ms ease; }
+.faq__btn::-webkit-details-marker { display: none; }
+.faq__btn::marker { content: ""; }
+.faq__btn:hover { background: var(--surface-raised); }
+.faq__btn:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+.faq__sinal { flex: none; width: 20px; font-family: var(--font-mono); font-size: 28px; line-height: 1; font-weight: 400; }
+.faq__sinal::before { content: "+"; }
+.faq__item[open] .faq__sinal::before { content: "\2212"; }
+.faq__q { flex: 1; font-weight: 700; }
+.faq__a { color: var(--ink); padding: var(--space-4) var(--space-5) var(--space-2) calc(var(--space-5) + 20px + var(--space-4) + 1px); }
+
+/* 09 · última chamada */
+.final { --hole-color: var(--surface); }
+/* mesma configuração do subtítulo da abertura (classe hero__headline); largura parecida com a coluna da abertura */
+.final__phrase { max-width: 760px; }
+.final__lead { max-width: 760px; color: var(--ink); font-size: 27px; }  /* mesma largura de "Talvez você não precise...": as duas alinham na esquerda e na direita */  /* mesmo tamanho de "Workshop de processos criativos..." */
+.final__cta { display: flex; justify-content: flex-start; max-width: 528px; }
+.final__cta .ac-btn { width: 100%; justify-content: space-between; }  /* mesma largura do ingresso acima */
+/* ingresso da última sessão: cópia do ingresso ao vivo, mesmo tamanho e cores, com o botão fora da caixa */
+.final__tk { max-width: 528px; margin-left: 0; margin-right: auto; color: var(--ink); }  /* alinhado à esquerda da página */
+.final .ac-section__inner > .final__cta { margin-top: var(--space-6); }
+
+/* ingresso de cinema */
+.ticket { --hole: 30px; position: relative; display: grid; grid-template-columns: minmax(0, 1fr) 232px; max-width: 1040px; margin-left: auto; margin-right: auto; background: var(--surface); color: var(--ink); }
+.ticket__main { padding: var(--space-7); outline: var(--stroke-hair) solid var(--rule); outline-offset: -12px; display: flex; flex-direction: column; gap: var(--space-5); }
+.ticket__top { display: flex; justify-content: space-between; gap: var(--space-4); flex-wrap: wrap; color: var(--ink-muted); }
+.ticket__title { font-family: var(--font-sans); font-weight: 800; font-size: 60px; line-height: 0.92; letter-spacing: -0.045em; text-transform: uppercase; }
+.ticket__info { display: grid; grid-template-columns: repeat(4, auto); justify-content: start; border-top: var(--stroke-hair) solid var(--rule); padding-top: var(--space-4); }
+.ticket__info > div { padding-right: var(--space-5); margin-right: var(--space-5); border-right: var(--stroke-hair) solid var(--rule-soft); }
+.ticket__info > div:last-child { border-right: 0; margin-right: 0; padding-right: 0; }
+.ticket__info dt { color: var(--ink-muted); margin-bottom: var(--space-2); }
+.ticket__stub {
+  position: relative; padding: var(--space-7) var(--space-5); outline: var(--stroke-hair) solid var(--rule); outline-offset: -12px;
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: var(--space-3); text-align: center;
+  background-image: linear-gradient(var(--ink) 50%, transparent 0); background-size: 1px 8px; background-repeat: repeat-y; background-position: left top;
+}
+.ticket__stub::before, .ticket__stub::after { content: ""; position: absolute; left: calc(var(--hole) / -2); width: var(--hole); height: var(--hole); border-radius: 50%; background: var(--hole-color); }
+.ticket__stub::before { top: calc(var(--hole) / -2); }
+.ticket__stub::after { bottom: calc(var(--hole) / -2); }
+.ticket__stub .caption { color: var(--ink-muted); }
+.ticket__stub .numeral { font-size: 56px; }
+
+/* celular */
+@media (max-width: 719px) {
+  .grid12 { grid-template-columns: minmax(0, 1fr); gap: var(--space-6); }
+  .grid12 > * { grid-column: 1 / -1; }
+  .hero__media { margin-bottom: var(--space-6); }
+  .hero__title { font-size: min(52px, calc((100vw - 48px) / 6.3)); }
+  .hero__grid { row-gap: var(--space-5); }
+  .hero__headline { font-size: 30px; line-height: 1.05; letter-spacing: -0.025em; }
+  .hero__sub { margin-top: 0; }
+  .ficha > div { padding: var(--space-3) var(--space-3) var(--space-4); }
+  .ficha .typed { font-size: 14px; }
+  .br-d { display: none; }
+  .ac-stat { grid-template-columns: 1fr; gap: 0; }
+  .ac-stat__item { flex-direction: row; justify-content: space-between; align-items: center; padding: var(--space-4) 0; border-top: var(--stroke-hair) solid var(--rule-soft); }
+  .ac-stat__item:last-child { border-bottom: var(--stroke-hair) solid var(--rule-soft); }
+  .band { padding: var(--space-5); gap: var(--space-4); align-items: flex-start; }
+  .band__ast { width: 34px; height: 34px; margin-top: 2px; }
+  .ac-ncard.cards3 { grid-template-columns: 1fr; gap: var(--space-7); }
+  .cards3 > li { width: 100%; }  /* celular: imagem e textos na largura toda, com a mesma margem do resto do site */
+  .cards3 .ac-ncard__index { font-size: 56px; }
+  .cards3 .ac-ncard__title { margin: var(--space-4) 0 var(--space-2); }
+  .fit { grid-template-columns: 1fr; }
+  .fit__title { padding: var(--space-4); }
+  .fit__list { --pl: var(--space-4); }
+  .fit__list li { padding-right: var(--space-4); }
+  .quotes { grid-template-columns: 1fr; gap: var(--space-8); }
+  .nota { padding: var(--space-7) var(--space-5) var(--space-5); }
+  .nota__clip { left: var(--space-5); }
+  .faq__btn { padding: var(--space-3) var(--space-4); gap: var(--space-3); }
+  .faq__a { padding: var(--space-3) var(--space-4) var(--space-2) calc(var(--space-4) + 20px + var(--space-3) + 1px); }
+  .ticket { grid-template-columns: 1fr; }
+  .ticket__main { padding: var(--space-6) var(--space-5); }
+  .ticket__title { font-size: 38px; }
+  .ticket__info { grid-template-columns: 1fr 1fr; gap: var(--space-4) 0; }
+  .ticket__info > div { border-right: 0; margin-right: 0; padding-right: var(--space-3); }
+  .ticket__stub { padding: var(--space-6) var(--space-5); background-image: linear-gradient(90deg, var(--ink) 50%, transparent 0); background-size: 8px 1px; background-repeat: repeat-x; }
+  .ticket__stub::before { top: calc(var(--hole) / -2); left: calc(var(--hole) / -2); bottom: auto; }
+  .ticket__stub::after { top: calc(var(--hole) / -2); right: calc(var(--hole) / -2); left: auto; bottom: auto; }
+}
+@media (min-width: 720px) and (max-width: 1100px) {
+  .cards3 { --ac-cols: 2; }
+  .quotes { grid-template-columns: 1fr 1fr; }
+  .ticket__info { grid-template-columns: 1fr 1fr; gap: var(--space-4) 0; }
+  .ticket__info > div { border-right: 0; }
+}
+
+/* ingresso da última sessão em tablet e celular: as quatro informações num quadro 2 x 2 com divisórias,
+   como as divisórias da versão de computador, e o título sempre em duas linhas (A VIDA QUE / VEM DEPOIS) */
+.br-t { display: none; }
+@media (max-width: 1239px) { .br-t { display: inline; } }
+@media (max-width: 1100px) {
+  .ticket__info { grid-template-columns: 1fr 1fr; gap: 0; padding-top: 0; }
+  .ticket__info > div { margin: 0; padding: var(--space-4) var(--space-4) var(--space-4) 0; border-right: 0; }
+  .ticket__info > div:nth-child(odd) { border-right: var(--stroke-hair) solid var(--rule-soft); }
+  .ticket__info > div:nth-child(even) { padding-left: var(--space-4); padding-right: 0; }
+  .ticket__info > div:nth-child(-n+2) { border-bottom: var(--stroke-hair) solid var(--rule-soft); }
+}
+@media (max-width: 719px) {
+  .ticket__title { font-size: min(38px, calc((100vw - 120px) / 5.6)); }
+  .ticket__info > div { padding-top: var(--space-3); padding-bottom: var(--space-3); }
+  .ticket__info > div:nth-child(odd) { padding-right: var(--space-3); }
+  .ticket__info > div:nth-child(even) { padding-left: var(--space-3); }
+  .ticket__info .typed { font-size: min(13px, 3.35vw); }
+  .ticket__stub .numeral { font-size: 48px; }
+}
+</style>
+</head>
+
+<body id="topo">
+
+<!-- ============================================================
+     MASTHEAD
+     ============================================================ -->
+<header class="ac-mast" data-theme="papel">
+  <div class="ac-mast__inner">
+    <a class="ac-mast__brand lead" href="#topo">Escola Travessias</a>
+    <ul class="ac-mast__meta field">
+      <li>[ workshop online ]</li>
+      <li>[ ao vivo + gravação opcional ]</li>
+      <li>[ domingo, 13.12.2026 ]</li>
+    </ul>
+  </div>
+</header>
+
+<main>
+
+<!-- ============================================================
+     SESSÃO 01 · CONVITE
+     ============================================================ -->
+<section class="ac-section ac-section--hero" data-theme="papel">
+  <div class="ac-section__inner">
+    <div>
+      <figure class="ac-media hero__media">
+        <div class="ac-media__frame r-convite" data-img="imagem01" data-alt="Imagem de convite do workshop A Vida que Vem Depois">
+          <span class="ac-media__ph caption">imagem01 · 2400 × 960 px · centro seguro</span>
+          <span class="ac-media__bar ac-media__bar--left" aria-hidden="true"></span>
+        </div>
+      </figure>
+
+      <div class="grid12 hero__grid">
+        <h1 class="display-l hero__title">A vida que<br> vem depois</h1>
+
+        <div class="hero__copy">
+          <p class="hero__headline">Conquiste a coragem de demolir estruturas em colapso para construir uma vida que volte a ter sentido.</p>
+          <p class="lead subtitulo hero__sub">Workshop de processos criativos para trabalhar o encerramento de ciclos, investigar valores, rever escolhas e traçar recomeço.</p>
+
+          <dl class="ficha">
+            <div><dt class="field">Data</dt><dd class="typed">Dom. 13.12.2026</dd></div>
+            <div><dt class="field">Horário</dt><dd class="typed"><span>9AM → 12PM</span><span class="caption">( Brasília )</span></dd></div>
+            <div><dt class="field">Formato</dt><dd class="typed">Online, ao vivo</dd></div>
+            <div><dt class="field">Gravação</dt><dd class="typed">Opcional</dd></div>
+          </dl>
+
+          <div>
+            <a class="ac-btn ac-btn--destaque ac-btn--xl label" href="https://pay.hotmart.com/B108448449W?off=orwguqgz&amp;checkoutMode=10"><span>Quero participar</span><span aria-hidden="true">→</span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SESSÃO 02 · IDENTIFICAÇÃO
+     ============================================================ -->
+<section class="ac-section sec-perguntas" data-theme="jornal">
+  <div class="ac-section__inner">
+    <div class="ac-sh">
+      <div class="ac-sh__top field"><span class="ac-sh__index">01</span><span>[ perguntas ]</span></div>
+      <div class="ac-sh__row ac-sh__row--sem-fio">
+        <h2 class="ac-sh__title">
+          <span class="pergunta">Quantas escolhas da sua vida foram realmente suas?</span>
+        </h2>
+      </div>
+    </div>
+
+    <div class="ask">
+        <p class="lead subtitulo">Talvez você tenha aprendido que uma <strong class="marca marca--nobreak">vida bem-sucedida</strong> precisa seguir determinada ordem e que tentar qualquer possibilidade fora dessa lógica é sinônimo de fracasso, de utopias ilusórias e infantis, de <strong class="marca">pessoas revoltadas que apenas incomodam as outras.</strong></p>
+        <p class="seq typed" aria-label="estudar, trabalhar, casar, produzir, performar, conquistar, acumular">
+          <span><span aria-hidden="true">[ </span>estudar <span aria-hidden="true">→</span></span>
+          <span>trabalhar <span aria-hidden="true">→</span></span>
+          <span>casar <span aria-hidden="true">→</span></span>
+          <span>produzir <span aria-hidden="true">→</span></span>
+          <span>performar <span aria-hidden="true">→</span></span>
+          <span>conquistar <span aria-hidden="true">→</span></span>
+          <span>acumular<span aria-hidden="true"> ]</span></span>
+        </p>
+    </div>
+
+    <ol class="qs">
+        <li><span class="qs__n">01</span><p class="qs__t">Mas e quando as estruturas que organizam nossa vida deixam de fazer sentido?</p></li>
+        <li><span class="qs__n">02</span><p class="qs__t">E quando continuar seguindo a cartilha nos destrói por dentro, todos os dias?</p></li>
+        <li><span class="qs__n">03</span><p class="qs__t">E quando aquilo que um dia pareceu certo já não representa a pessoa que somos hoje?</p></li>
+    </ol>
+
+    <p class="fecho">É sobre perguntas como essas que vamos trabalhar.</p>
+  </div>
+</section>
+
+<!-- ============================================================
+     SESSÃO 03 · OFERTA CLARA
+     ============================================================ -->
+<section class="ac-section" data-theme="papel">
+  <div class="ac-section__inner">
+    <div class="ac-sh">
+      <div class="ac-sh__top field"><span class="ac-sh__index">02</span><span>[ o workshop ]</span></div>
+      <div class="ac-sh__row"><h2 class="headline ac-sh__title">o que é esse workshop?</h2></div>
+    </div>
+
+    <div class="what">
+      <p class="lead"><strong>A Vida que Vem Depois</strong> é um workshop de processos criativos desenvolvido para ajudar você a investigar ciclos, rever escolhas e objetivos e construir possibilidades de recomeço.</p>
+      <p class="lead"><svg class="what__arrow" viewBox="0 0 24 16" aria-hidden="true"><path d="M1 8h19M13.5 1.5 20.5 8l-7 6.5" fill="none" stroke="currentColor" stroke-width="3.2"/></svg>Durante 3 horas, vamos percorrer uma jornada de conceitos simbólicos, exercícios individuais e ferramentas de facilitação para explorar valores, reconhecer estruturas internas que precisam de reformas, avaliar decisões e transformar reflexões em ações possíveis.</p>
+      <p class="lead"><svg class="what__arrow" viewBox="0 0 24 16" aria-hidden="true"><path d="M1 8h19M13.5 1.5 20.5 8l-7 6.5" fill="none" stroke="currentColor" stroke-width="3.2"/></svg>O encontro tem uma narrativa inspirada em seis arcanos do tarô, utilizados como referências simbólicas para organizar o percurso.</p>
+    </div>
+
+    <dl class="ac-stat">
+      <div class="ac-stat__item"><dt><span class="ac-tag label">Duração</span></dt><dd class="ac-stat__value numeral">03<span class="ac-stat__suffix"> horas</span></dd></div>
+      <div class="ac-stat__item"><dt><span class="ac-tag label">Jornada</span></dt><dd class="ac-stat__value numeral">06<span class="ac-stat__suffix"> etapas</span></dd></div>
+      <div class="ac-stat__item"><dt><span class="ac-tag label">Prática</span></dt><dd class="ac-stat__value numeral">06<span class="ac-stat__suffix"> exercícios</span></dd></div>
+    </dl>
+
+    <p class="band lead"><svg class="band__ast" viewBox="0 0 40 40" aria-hidden="true"><g stroke="currentColor" stroke-width="5"><path d="M20 2v36"/><path d="M4.4 11l31.2 18"/><path d="M4.4 29l31.2-18"/></g></svg><span>Não é necessário conhecer tarô para participar, toda a semiótica será explicada.</span></p>
+  </div>
+</section>
+
+<!-- ============================================================
+     SESSÃO 04 · O QUE VAMOS FAZER
+     ============================================================ -->
+<section class="ac-section" data-theme="areia" id="percurso">
+  <span class="ac-section__mark numeral-ghost" aria-hidden="true">06</span>
+  <div class="ac-section__inner">
+    <div class="ac-sh">
+      <div class="ac-sh__top field"><span class="ac-sh__index">03</span><span>[ percurso ]</span></div>
+      <div class="ac-sh__row"><h2 class="headline ac-sh__title">o que vamos fazer?</h2></div>
+    </div>
+
+    <ol class="ac-ncard cards3">
+      <li>
+        <p class="ac-ncard__index index" aria-hidden="true">01</p>
+        <figure class="ac-media"><div class="ac-media__frame r-simbolo" data-img="imagem02" data-alt="Símbolo da etapa 01"><span class="ac-media__ph caption">imagem02 · 1:1</span></div></figure>
+        <h3 class="ac-ncard__title serif-title">Perceber e/ou aceitar o que precisa cair</h3>
+        <p class="ac-ncard__text caption">Reconhecer situações, relações, expectativas sociais, modelos de sucesso, culpas, obrigações e ideias herdadas que não fazem mais sentido.</p>
+      </li>
+      <li>
+        <p class="ac-ncard__index index" aria-hidden="true">02</p>
+        <figure class="ac-media"><div class="ac-media__frame r-simbolo" data-img="imagem03" data-alt="Símbolo da etapa 02"><span class="ac-media__ph caption">imagem03 · 1:1</span></div></figure>
+        <h3 class="ac-ncard__title serif-title">Imaginar outras possibilidades</h3>
+        <p class="ac-ncard__text caption">Investigar valores, desejos e futuros que queremos experimentar.</p>
+      </li>
+      <li>
+        <p class="ac-ncard__index index" aria-hidden="true">03</p>
+        <figure class="ac-media"><div class="ac-media__frame r-simbolo" data-img="imagem04" data-alt="Símbolo da etapa 03"><span class="ac-media__ph caption">imagem04 · 1:1</span></div></figure>
+        <h3 class="ac-ncard__title serif-title">Aprender a deixar para trás</h3>
+        <p class="ac-ncard__text caption">Reconhecer as perdas, os ganhos e as ambivalências envolvidas no amadurecimento.</p>
+      </li>
+      <li>
+        <p class="ac-ncard__index index" aria-hidden="true">04</p>
+        <figure class="ac-media"><div class="ac-media__frame r-simbolo" data-img="imagem05" data-alt="Símbolo da etapa 04"><span class="ac-media__ph caption">imagem05 · 1:1</span></div></figure>
+        <h3 class="ac-ncard__title serif-title">Aprender a sustentar as próprias escolhas</h3>
+        <p class="ac-ncard__text caption">Trabalhar limites, autonomia e a autorresponsabilidade das nossas escolhas diante das expectativas externas.</p>
+      </li>
+      <li>
+        <p class="ac-ncard__index index" aria-hidden="true">05</p>
+        <figure class="ac-media"><div class="ac-media__frame r-simbolo" data-img="imagem06" data-alt="Símbolo da etapa 05"><span class="ac-media__ph caption">imagem06 · 1:1</span></div></figure>
+        <h3 class="ac-ncard__title serif-title">Sonhar uma vida na qual eu queira estar</h3>
+        <p class="ac-ncard__text caption">Elaborar uma definição própria e autêntica de uma vida boa.</p>
+      </li>
+      <li>
+        <p class="ac-ncard__index index" aria-hidden="true">06</p>
+        <figure class="ac-media"><div class="ac-media__frame r-simbolo" data-img="imagem07" data-alt="Símbolo da etapa 06"><span class="ac-media__ph caption">imagem07 · 1:1</span></div></figure>
+        <h3 class="ac-ncard__title serif-title">Transformar intenção em movimento</h3>
+        <p class="ac-ncard__text caption">Transformar intenção em primeiros passos concretos que suportam a fluidez e a ressignificação ao longo do tempo.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============================================================
+     SESSÃO 05 · O QUE VOCÊ VAI LEVAR
+     ============================================================ -->
+<section class="ac-section" data-theme="papel">
+  <div class="ac-section__inner">
+    <div class="ac-sh">
+      <div class="ac-sh__top field"><span class="ac-sh__index">04</span><span>[ material ]</span></div>
+      <div class="ac-sh__row ac-sh__row--sem-fio"><h2 class="headline ac-sh__title">O que você vai ganhar</h2></div>
+    </div>
+
+    <ol class="kit">
+      <li><svg class="kit__ico" viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><path fill="currentColor" d="M6 2h4v1h-4zM6 3h4v1h-4zM1 4h3v1h-3zM6 4h4v1h-4zM12 4h3v1h-3zM1 5h3v1h-3zM12 5h3v1h-3zM1 6h3v1h-3zM5 6h6v1h-6zM12 6h3v1h-3zM4 7h8v1h-8zM0 8h3v1h-3zM4 8h8v1h-8zM13 8h3v1h-3zM0 9h3v1h-3zM4 9h8v1h-8zM13 9h3v1h-3zM0 10h3v1h-3zM4 10h8v1h-8zM13 10h3v1h-3zM0 11h3v1h-3zM4 11h8v1h-8zM13 11h3v1h-3zM0 12h3v1h-3zM4 12h8v1h-8zM13 12h3v1h-3z"/></svg><p class="kit__t">Uma experiência coletiva com a possibilidade de ouvir pessoas, compartilhar, falar e ser ouvido.</p></li>
+      <li><svg class="kit__ico" viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><path fill="currentColor" d="M7 1h2v1h-2zM2 2h7v1h-7zM2 3h9v1h-9zM2 4h7v1h-7zM7 5h2v1h-2zM7 6h7v1h-7zM5 7h9v1h-9zM7 8h7v1h-7zM7 9h2v1h-2zM7 10h2v1h-2zM7 11h2v1h-2zM7 12h2v1h-2zM7 13h2v1h-2zM5 14h6v1h-6z"/></svg><p class="kit__t">Ferramentas práticas para organizar escolhas, possibilidades e decisões.</p></li>
+      <li><svg class="kit__ico" viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><path fill="currentColor" d="M4 1h6v1h-6zM3 2h2v1h-2zM9 2h2v1h-2zM2 3h2v1h-2zM10 3h2v1h-2zM2 4h1v1h-1zM11 4h1v1h-1zM2 5h1v1h-1zM11 5h1v1h-1zM2 6h1v1h-1zM11 6h1v1h-1zM2 7h1v1h-1zM11 7h1v1h-1zM2 8h2v1h-2zM10 8h2v1h-2zM3 9h2v1h-2zM9 9h3v1h-3zM4 10h6v1h-6zM11 10h2v1h-2zM11 11h3v1h-3zM12 12h3v1h-3zM13 13h2v1h-2z"/></svg><p class="kit__t">Exercícios de investigação e clarificação sobre os seus valores pessoais e desafios.</p></li>
+      <li><svg class="kit__ico" viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><path fill="currentColor" d="M3 1h8v1h-8zM3 2h1v1h-1zM10 2h2v1h-2zM3 3h1v1h-1zM10 3h1v1h-1zM12 3h1v1h-1zM3 4h1v1h-1zM10 4h4v1h-4zM3 5h1v1h-1zM13 5h1v1h-1zM3 6h1v1h-1zM5 6h6v1h-6zM13 6h1v1h-1zM3 7h1v1h-1zM13 7h1v1h-1zM3 8h1v1h-1zM5 8h6v1h-6zM13 8h1v1h-1zM3 9h1v1h-1zM13 9h1v1h-1zM3 10h1v1h-1zM5 10h6v1h-6zM13 10h1v1h-1zM3 11h1v1h-1zM13 11h1v1h-1zM3 12h1v1h-1zM5 12h4v1h-4zM13 12h1v1h-1zM3 13h1v1h-1zM13 13h1v1h-1zM3 14h11v1h-11z"/></svg><p class="kit__t">PDF teórico do workshop.</p></li>
+      <li><svg class="kit__ico" viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><path fill="currentColor" d="M3 1h10v1h-10zM1 2h4v1h-4zM12 2h1v1h-1zM3 3h1v1h-1zM12 3h1v1h-1zM1 4h4v1h-4zM6 4h5v1h-5zM12 4h1v1h-1zM3 5h1v1h-1zM12 5h1v1h-1zM1 6h4v1h-4zM6 6h5v1h-5zM12 6h1v1h-1zM3 7h1v1h-1zM12 7h1v1h-1zM1 8h4v1h-4zM6 8h3v1h-3zM12 8h1v1h-1zM3 9h1v1h-1zM12 9h1v1h-1zM1 10h4v1h-4zM12 10h1v1h-1zM3 11h1v1h-1zM12 11h1v1h-1zM1 12h4v1h-4zM12 12h1v1h-1zM3 13h10v1h-10z"/></svg><p class="kit__t">Caderno digital com as atividades do encontro.</p></li>
+      <li><svg class="kit__ico" viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><path fill="currentColor" d="M1 1h14v1h-14zM1 2h1v1h-1zM14 2h1v1h-1zM1 3h1v1h-1zM6 3h1v1h-1zM14 3h1v1h-1zM1 4h1v1h-1zM6 4h2v1h-2zM14 4h1v1h-1zM1 5h1v1h-1zM6 5h3v1h-3zM14 5h1v1h-1zM1 6h1v1h-1zM6 6h4v1h-4zM14 6h1v1h-1zM1 7h1v1h-1zM6 7h3v1h-3zM14 7h1v1h-1zM1 8h1v1h-1zM6 8h2v1h-2zM14 8h1v1h-1zM1 9h1v1h-1zM6 9h1v1h-1zM14 9h1v1h-1zM1 10h1v1h-1zM14 10h1v1h-1zM1 11h14v1h-14zM6 12h4v1h-4zM4 13h8v1h-8z"/></svg><p class="kit__t">Gravação opcional para (re)assistir quando, onde e quantas vezes quiser.</p></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============================================================
+     SESSÃO 06 · POSSIBILIDADES DE COMPRA
+     Links de checkout da Hotmart: ao vivo nos botões de compra; gravado só no botão da versão gravada.
+     ============================================================ -->
+<section class="ac-section" data-theme="jornal" id="ingressos">
+  <div class="ac-section__inner">
+    <div class="ac-sh">
+      <div class="ac-sh__top field"><span class="ac-sh__index">05</span><span>[ ingressos ]</span></div>
+      <div class="ac-sh__row"><h2 class="headline ac-sh__title">escolha como participar</h2></div>
+    </div>
+
+    <div class="offers">
+      <article class="tk">
+        <div class="tk__head field"><span>Ingresso</span><span>Nº 01</span></div>
+        <h3 class="tk__title">Workshop ao vivo</h3>
+        <div class="tk__row">
+          <p class="tk__side field">Domingo</p>
+          <div class="tk__cell tk__main"><p class="field tk__lab">Data</p><p class="tk__big">13.12.2026</p></div>
+          <div class="tk__stack">
+          <div class="tk__cell"><p class="field tk__lab">Início</p><p class="typed">9AM</p></div>
+          <div class="tk__cell"><p class="field tk__lab">Fim</p><p class="typed">12PM</p></div>
+          </div>
+        </div>
+        <div class="tk__cell tk__list">
+          <p class="field tk__lab">Inclui</p>
+          <ul class="tk__checks">
+            <li>Participação no encontro online.</li>
+            <li>Exercícios conduzidos em tempo real.</li>
+            <li>PDF + caderno digital exclusivo.</li>
+            <li>Possibilidade de compartilhar e fazer perguntas.</li>
+            <li>Gravação opcional direto na pág de compra.</li>
+          </ul>
+        </div>
+        <div class="tk__stub">
+          <div class="tk__lotes"><div class="tk__lote"><p class="field tk__lab">Lote 01</p><p class="tk__value"><span class="cur">R$</span>97</p></div><div class="tk__lote"><p class="field tk__lab">Lote 02</p><p class="tk__value"><span class="cur">R$</span>127</p></div><div class="tk__lote"><p class="field tk__lab">Lote 03</p><p class="tk__value"><span class="cur">R$</span>149</p></div></div>
+          <a class="ac-btn ac-btn--destaque ac-btn--xl label tk__btn" href="https://pay.hotmart.com/B108448449W?off=orwguqgz&amp;checkoutMode=10"><span>Quero participar ao vivo</span><span aria-hidden="true">→</span></a>
+        </div>
+      </article>
+
+      <article class="tk">
+        <div class="tk__head field"><span>Ingresso</span><span>Nº 02</span></div>
+        <h3 class="tk__title">Workshop gravado</h3>
+        <div class="tk__row">
+          <p class="tk__side field">Gravado</p>
+          <div class="tk__cell tk__main"><p class="field tk__lab">Acesso</p><p class="tk__big">12 meses</p></div>
+          <div class="tk__stack">
+          <div class="tk__cell"><p class="field tk__lab">Pausar</p><p class="typed">Sim</p></div>
+          <div class="tk__cell"><p class="field tk__lab">Rever</p><p class="typed">Sim</p></div>
+          </div>
+        </div>
+        <div class="tk__cell tk__list">
+          <p class="field tk__lab">Inclui</p>
+          <ul class="tk__checks">
+            <li>Para quem prefere fazer no seu próprio ritmo.</li>
+            <li>Gravação integral do encontro.</li>
+            <li>PDF + caderno digital exclusivo.</li>
+            <li>Possibilidade de pausar e rever os exercícios.</li>
+            <li>Acesso por até 12 meses.</li>
+          </ul>
+        </div>
+        <div class="tk__stub">
+          <div class="tk__lotes"><div class="tk__lote"><p class="field tk__lab">Lote único</p><p class="tk__value"><span class="cur">R$</span>127</p></div></div>
+          <a class="ac-btn ac-btn--destaque ac-btn--xl label tk__btn" href="https://pay.hotmart.com/A108449310D?off=dliajbi7"><span>Comprar apenas a gravação</span><span aria-hidden="true">→</span></a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SESSÃO 07 · PARA QUEM É
+     ============================================================ -->
+<section class="ac-section" data-theme="papel">
+  <div class="ac-section__inner">
+    <div class="ac-sh">
+      <div class="ac-sh__top field"><span class="ac-sh__index">06</span><span>[ para quem ]</span></div>
+      <div class="ac-sh__row"><h2 class="headline ac-sh__title">para quem é?</h2></div>
+    </div>
+
+    <div class="fit">
+      <div class="fit__box">
+        <h3 class="fit__title">É pra você que:</h3>
+        <ul class="fit__list fit__list--sim">
+          <li>Está questionando escolhas e modelos de vida mas não sabe para onde ir.</li>
+          <li>Sente que precisa encerrar ciclos ou rever estruturas e não sabe por onde começar.</li>
+          <li>Quer conhecer melhor seus desejos e valores mais profundos.</li>
+          <li>Está buscando caminhos autênticos e possíveis para recomeçar.</li>
+          <li>Deseja ferramentas que te ajudem a organizar reflexões e decisões.</li>
+        </ul>
+      </div>
+      <div class="fit__box">
+        <h3 class="fit__title">Talvez não seja o que você procura se:</h3>
+        <ul class="fit__list fit__list--nao">
+          <li>Espera receber respostas prontas sobre o que fazer da própria vida.</li>
+          <li>Busca uma fórmula rápida para resolver problemas complexos.</li>
+          <li>Procura uma experiência de psicoterapia ou tratamento clínico.</li>
+          <li>Espera que alguém decida por você.</li>
+          <li>Não está pronto para olhar para si mesmo com honestidade radical sobre suas incoerências e, ao mesmo tempo, com compaixão e menos autojulgamentos.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SESSÃO 08 · PROVA SOCIAL
+     Seis caixas provisórias. Troque nome e relato pelos depoimentos reais.
+     ============================================================ -->
+<section class="ac-section" data-theme="areia">
+  <div class="ac-section__inner">
+    <div class="ac-sh">
+      <div class="ac-sh__top field"><span class="ac-sh__index">07</span><span>[ relatos ]</span></div>
+      <div class="ac-sh__row"><h2 class="headline ac-sh__title">o que outros alunos estão dizendo</h2></div>
+    </div>
+
+    <ul class="quotes">
+      <li><figure class="nota"><svg class="nota__clip" viewBox="0 0 20 60" aria-hidden="true"><path d="M15 14V47a6 6 0 0 1-12 0V8a5 5 0 0 1 10 0V42a2 2 0 0 1-4 0V16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><blockquote class="nota__text body">“Obrigada, Amanda! Foi um trabalho muito bonito. Desde o primeiro exercício de escrita, entendi que o meu trabalho é plural, que não é fazendo uma coisa só, nem num sistema quadradinho cheio de regras. Já venho há muitos anos tentando construir esse caminho e sinto que agora finalmente entendi que esse é o momento de florescer mesmo. Obrigada.”</blockquote><figcaption class="nota__by label">Dayse Pessoa de Azevedo</figcaption></figure></li>
+      <li><figure class="nota"><svg class="nota__clip" viewBox="0 0 20 60" aria-hidden="true"><path d="M15 14V47a6 6 0 0 1-12 0V8a5 5 0 0 1 10 0V42a2 2 0 0 1-4 0V16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><blockquote class="nota__text body">“Achei que foi muito bonito. Como falei pra Amanda, eu já carrego há muito tempo muitos traumas, faço tratamento há muito tempo e estou também em um momento de transição de carreira, de muitos questionamentos e discussões internas. Mas esse momento trouxe uma luz muito grande. Queria compartilhar porque foi muito bonito mesmo.”</blockquote><figcaption class="nota__by label">Bruna Ferreira Tapia</figcaption></figure></li>
+      <li><figure class="nota"><svg class="nota__clip" viewBox="0 0 20 60" aria-hidden="true"><path d="M15 14V47a6 6 0 0 1-12 0V8a5 5 0 0 1 10 0V42a2 2 0 0 1-4 0V16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><blockquote class="nota__text body">“Sua didática é impressionante: você transmite um volume enorme de conhecimento de forma sistemática, inteligente e admirável. Foi muito interessante acompanhar esse processo. Fenomenal, incrível.”</blockquote><figcaption class="nota__by label">Beatriz Conti</figcaption></figure></li>
+      <li><figure class="nota"><svg class="nota__clip" viewBox="0 0 20 60" aria-hidden="true"><path d="M15 14V47a6 6 0 0 1-12 0V8a5 5 0 0 1 10 0V42a2 2 0 0 1-4 0V16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><blockquote class="nota__text body">“Primeiro que este espaço foi muito acolhedor, muito delicioso! Estou em um momento da minha vida de burnout, afastada do trabalho, e me sentia muito mal de ter abandonado a minha essência. Eu sinto tanta falta de ser essa essência da minha infância, que me fazia feliz, e pude reencontrá-la aqui. Eu só abracei muito essa Bruna. Parecia que ela era alguém que estava muito longe de mim por tanto tempo, e senti que estava em um espaço repleto de vida, de abundância de energia vital. Me recarreguei muito me encontrando com ela, que sou eu, e me recarreguei vendo aquela Bruna. Tenho depressão, estou em tratamento há anos, hoje em dia está super controlado, mas em um cenário de tantos abusos no trabalho, é muito difícil. Então estar com essa parte minha de novo foi o maior presente dessa noite. Que delícia isso, impagável.”</blockquote><figcaption class="nota__by label">Bruna Falcão</figcaption></figure></li>
+      <li><figure class="nota"><svg class="nota__clip" viewBox="0 0 20 60" aria-hidden="true"><path d="M15 14V47a6 6 0 0 1-12 0V8a5 5 0 0 1 10 0V42a2 2 0 0 1-4 0V16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><blockquote class="nota__text body">“Nossa, foi muito incrível, de fato foi inesperado. Passei por vários momentos de altos e baixos, de saída de depressão, de burnout... Nós fizemos um atendimento no começo do ano e eu estava pedindo socorro, precisando dar um rumo para tudo o que estava sentindo. No atendimento, você me disse que as mudanças logo iam acontecer e, em questão de dois ou três meses, eu fiz o movimento. Agora estou aqui. Está um caos, muitas coisas para resolver ainda, mas este encontro, este exercício de imaginação de pensar qual é o caminho para onde estamos indo e o que faz sentido para a gente mesmo, né? Porque existem tantas coisas que vamos tentando cumprir, que soltar foi uma libertação. Chorei de felicidade, de alívio de várias coisas ao mesmo tempo. Era tudo o que eu estava precisando. Eu nem sabia se ia participar, mas meu aniversário foi há dois dias, então estou renascendo mesmo. Gratidão, foi muito bom.”</blockquote><figcaption class="nota__by label">Mariana Sierra</figcaption></figure></li>
+      <li><figure class="nota"><svg class="nota__clip" viewBox="0 0 20 60" aria-hidden="true"><path d="M15 14V47a6 6 0 0 1-12 0V8a5 5 0 0 1 10 0V42a2 2 0 0 1-4 0V16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><blockquote class="nota__text body">“Eu não imaginei que fosse entrar em um estado tão profundo, sinceramente. Tive visões muito simbólicas para mim e encontrei, literalmente, a minha essência antes dos traumas, aquilo que foi apagado por esses abusos. Entendi o que está dentro de mim, que estava escondido, nublado. Foi uma experiência única, porque eu já tinha feito meditações guiadas, mas sempre havia alguma interferência. O que encontrei hoje foi o estado mais puro com o qual eu poderia ter contato. Estou muito grata pelo encontro de hoje.”</blockquote><figcaption class="nota__by label">Julia Bertuol Boezzio</figcaption></figure></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============================================================
+     SESSÃO 09 · DÚVIDAS
+     ============================================================ -->
+<section class="ac-section" data-theme="papel" id="duvidas">
+  <div class="ac-section__inner">
+    <div class="ac-sh">
+      <div class="ac-sh__top field"><span class="ac-sh__index">08</span><span>[ dúvidas ]</span></div>
+      <div class="ac-sh__row"><h2 class="headline ac-sh__title">perguntas frequentes</h2></div>
+    </div>
+
+    <div class="faq">
+      <details class="faq__item">
+        <summary class="faq__btn"><span class="faq__sinal" aria-hidden="true"></span><span class="faq__q lead">Preciso conhecer tarô para participar?</span></summary>
+        <p class="faq__a lead">Não. Os seis arcanos entram como referência simbólica e toda a semiótica é explicada no encontro.</p>
+      </details>
+      <details class="faq__item">
+        <summary class="faq__btn"><span class="faq__sinal" aria-hidden="true"></span><span class="faq__q lead">O encontro é ao vivo ou gravado?</span></summary>
+        <p class="faq__a lead">Ao vivo e online, no dia 13 de dezembro, das 9AM às 12PM. Mas você pode adicionar a gravação direto no checkout e também dá para comprar só a versão gravada.</p>
+      </details>
+      <details class="faq__item">
+        <summary class="faq__btn"><span class="faq__sinal" aria-hidden="true"></span><span class="faq__q lead">E se eu não puder participar no dia?</span></summary>
+        <p class="faq__a lead">Você pode comprar apenas a versão gravada do Workshop para assistir quando, onde e quantas vezes você quiser.</p>
+      </details>
+      <details class="faq__item">
+        <summary class="faq__btn"><span class="faq__sinal" aria-hidden="true"></span><span class="faq__q lead">Vou receber o material de apoio?</span></summary>
+        <p class="faq__a lead">Sim! O PDF teórico e o caderno digital fazem parte do pacote da experiência.</p>
+      </details>
+      <details class="faq__item">
+        <summary class="faq__btn"><span class="faq__sinal" aria-hidden="true"></span><span class="faq__q lead">Quanto tempo terei acesso à gravação?</span></summary>
+        <p class="faq__a lead">Até 12 meses, para assistir quando e quantas vezes quiser.</p>
+      </details>
+      <details class="faq__item">
+        <summary class="faq__btn"><span class="faq__sinal" aria-hidden="true"></span><span class="faq__q lead">Preciso compartilhar questões pessoais com o grupo?</span></summary>
+        <p class="faq__a lead">Não. Os exercícios são individuais e você compartilha só se quiser.</p>
+      </details>
+      <details class="faq__item">
+        <summary class="faq__btn"><span class="faq__sinal" aria-hidden="true"></span><span class="faq__q lead">O workshop é uma experiência terapêutica?</span></summary>
+        <p class="faq__a lead">Não é psicoterapia nem tratamento clínico. É um workshop de processos criativos voltado ao autoconhecimento.</p>
+      </details>
+      <details class="faq__item">
+        <summary class="faq__btn"><span class="faq__sinal" aria-hidden="true"></span><span class="faq__q lead">Como recebo o acesso depois da compra?</span></summary>
+        <p class="faq__a lead">Pelo e-mail informado na compra, logo após a confirmação do pagamento.</p>
+      </details>
+      <details class="faq__item">
+        <summary class="faq__btn"><span class="faq__sinal" aria-hidden="true"></span><span class="faq__q lead">Posso parcelar?</span></summary>
+        <p class="faq__a lead">Sim, no cartão de crédito, direto na página de pagamento.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SESSÃO 10 · ÚLTIMA CHAMADA
+     ============================================================ -->
+<section class="ac-section final" data-theme="preto">
+  <div class="ac-section__inner">
+    <div class="stack">
+      <p class="hero__headline final__phrase">Talvez você não precise de mais metas de sucesso para tentar cumprir. Talvez precise de espaço para questionar os caminhos que aprendeu a seguir.</p>
+    </div>
+    <p class="lead final__lead">A vida que vem depois começa quando você se permite investigar o que de fato merece a sua energia, o que precisa virar memória de vez e o que ainda pode ser construído com os caquinhos e troféus do passado.</p>
+
+    <div class="final__tk" data-theme="jornal">
+      <article class="tk">
+        <div class="tk__head field"><span>Ingresso</span><span>Nº 01</span></div>
+        <h3 class="tk__title">Workshop ao vivo</h3>
+        <div class="tk__row">
+          <p class="tk__side field">Domingo</p>
+          <div class="tk__cell tk__main"><p class="field tk__lab">Data</p><p class="tk__big">13.12.2026</p></div>
+          <div class="tk__stack">
+          <div class="tk__cell"><p class="field tk__lab">Início</p><p class="typed">9AM</p></div>
+          <div class="tk__cell"><p class="field tk__lab">Fim</p><p class="typed">12PM</p></div>
+          </div>
+        </div>
+        <div class="tk__cell tk__list">
+          <p class="field tk__lab">Inclui</p>
+          <ul class="tk__checks">
+            <li>Participação no encontro online.</li>
+            <li>Exercícios conduzidos em tempo real.</li>
+            <li>PDF + caderno digital exclusivo.</li>
+            <li>Possibilidade de compartilhar e fazer perguntas.</li>
+            <li>Gravação opcional direto na pág de compra.</li>
+          </ul>
+        </div>
+        <div class="tk__stub">
+          <div class="tk__lotes"><div class="tk__lote"><p class="field tk__lab">Lote 01</p><p class="tk__value"><span class="cur">R$</span>97</p></div><div class="tk__lote"><p class="field tk__lab">Lote 02</p><p class="tk__value"><span class="cur">R$</span>127</p></div><div class="tk__lote"><p class="field tk__lab">Lote 03</p><p class="tk__value"><span class="cur">R$</span>149</p></div></div>
+        </div>
+      </article>
+    </div>
+
+    <div class="final__cta">
+      <a class="ac-btn ac-btn--destaque ac-btn--xl label" href="https://pay.hotmart.com/B108448449W?off=orwguqgz&amp;checkoutMode=10"><span>Garantir o meu ingresso agora</span><span aria-hidden="true">→</span></a>
+    </div>
+
+    <footer class="ac-foot">
+      <p class="ac-foot__brand body-s">Amanda Avalon · Escola Travessias</p>
+      <p class="ac-foot__col caption"><span>A vida que vem depois</span><span>Workshop online</span></p>
+      <p class="ac-foot__col caption"><span>13.12.2026</span><span>9AM → 12PM</span></p>
+      <p class="ac-foot__col caption"><span>( 2026 )</span><span>Todos os direitos reservados</span></p>
+    </footer>
+  </div>
+</section>
+
+</main>
+
+<script>
+/* ============================================================
+   IMAGENS
+   Cada bloco com data-img="imagem01" procura o arquivo com esse
+   nome na mesma pasta do index.html, em .jpg, .jpeg, .png ou .webp.
+   Se as imagens ficarem numa subpasta, escreva o nome dela em PASTA,
+   por exemplo: var PASTA = "imagens/";
+   Enquanto o arquivo não existir, o bloco vazio continua no lugar.
+   ============================================================ */
+(function () {
+  var PASTA = "";
+  var EXT = ["jpg", "jpeg", "png", "webp"];
+  var frames = document.querySelectorAll("[data-img]");
+  Array.prototype.forEach.call(frames, function (frame) {
+    var nome = frame.getAttribute("data-img");
+    var img = new Image();
+    var i = 0;
+    img.className = "ac-media__img";
+    img.alt = frame.getAttribute("data-alt") || "";
+    img.decoding = "async";
+    img.onload = function () {
+      frame.insertBefore(img, frame.firstChild);
+      frame.classList.add("is-loaded");
+    };
+    img.onerror = function () {
+      i += 1;
+      if (i < EXT.length) img.src = PASTA + nome + "." + EXT[i];
+    };
+    img.src = PASTA + nome + "." + EXT[0];
+  });
+})();
+</script>
+</body>
+</html>
