@@ -3,14 +3,26 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>A Vida que Vem Depois · Workshop online · Escola Travessias</title>
-<meta name="description" content="Workshop de processos criativos para trabalhar o encerramento de ciclos, investigar valores, rever escolhas e traçar recomeço. Domingo, 13 de dezembro de 2026, das 9AM às 12PM, online e ao vivo.">
+<title>Akitu: Ritual da Virada · Ritual coletivo à distância · Escola Travessias</title>
+<meta name="description" content="Ritual de Ano Novo inspirado nos ritos babilônicos. Ritual da Virada no Solstício de Verão, para queimar o peso do passado e decretar as vitórias para o próximo ano. Segunda, 21 de dezembro de 2026, às 21h, à distância.">
 <meta property="og:type" content="website">
-<meta property="og:title" content="A Vida que Vem Depois · Workshop online">
-<meta property="og:description" content="Conquiste a coragem de demolir estruturas ilusórias para construir uma vida que realmente faça sentido.">
+<meta property="og:title" content="Akitu: Ritual da Virada">
+<meta property="og:description" content="Ritual da Virada no Solstício de Verão, para queimar o peso do passado e decretar as vitórias para o próximo ano.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&family=Schibsted+Grotesk:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+
+<script>
+/* ============================================================
+   LINKS
+   CHECKOUT: cole entre as aspas o link de pagamento do Akitu.
+   Todos os botões de compra da página passam a usar esse link.
+   Enquanto estiver vazio, os botões levam até o ingresso (sessão 06).
+   WORKSHOP: link do workshop A Vida que Vem Depois, citado na sessão 01.
+   ============================================================ */
+var CHECKOUT = "https://pay.hotmart.com/E108613285W?off=0figcn62";
+var WORKSHOP = "https://pay.hotmart.com/B108448449W?off=orwguqgz&checkoutMode=10";
+</script>
 
 <style>
 /* ============================================================
@@ -20,11 +32,14 @@
 :root {
   --convite-altura: 480px;     /* imagem01 no computador · sugestão 2400 x 960 px */
   --convite-ratio-cel: 5 / 2;  /* imagem01 no tablet e no celular */
-  --ratio-simbolo: 1 / 1;      /* imagem02 a imagem07 · quadradas · sugestão 600 x 600 px */
-  --destaque: #B8401E;         /* cor dos botões de compra */
-  --destaque-hover: #8F3216;   /* a mesma cor, mais escura, ao passar o mouse */
-  --vermelho: #B8401E;         /* fundo da sequência [ estudar → ... ] (sessão 01) */
-  --verde: #2F6B3F;            /* sinal de confirmação nas listas dos ingressos */
+  --ratio-simbolo: 1 / 1;      /* imagem02 a imagem08 · quadradas · sugestão 600 x 600 px */
+  --destaque: #8EA9D8;         /* azul Pantone 2121 U · cor dos botões de compra */
+  --destaque-hover: #7391C8;   /* o mesmo azul, mais escuro, ao passar o mouse */
+  --destaque-texto: #121212;   /* texto escuro sobre o azul (o texto claro ficava ilegível) */
+  --azul: #8EA9D8;             /* o × da lista "não é para você" (sessão 07) */
+  --combo: #BDC6D6;            /* quadradinhos do combo e da equipe, nos ingressos: azul acinzentado e mais claro que o dos botões de compra */
+  --combo-hover: #A3B0C7;      /* o mesmo, mais escuro, ao passar o mouse */
+  --verde: #2F6B3F;            /* sinal de confirmação nas listas */
 }
 
 /* ============================================================
@@ -155,8 +170,8 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--focus); outline
 }
 .ac-btn--l { height: 48px; padding: 0 var(--space-5); }
 .ac-btn--xl { height: 60px; padding: 0 var(--space-6); font-size: 14px; gap: var(--space-3); }
-.ac-btn--destaque { background: var(--destaque); color: var(--base-papel); border-color: var(--destaque); }
-.ac-btn--destaque:hover { background: var(--destaque-hover); border-color: var(--destaque-hover); color: var(--base-papel); }
+.ac-btn--destaque { background: var(--destaque); color: var(--destaque-texto); border-color: var(--destaque); }
+.ac-btn--destaque:hover { background: var(--destaque-hover); border-color: var(--destaque-hover); color: var(--destaque-texto); }
 .ac-btn--solid { background: var(--ink); color: var(--on-ink); border-color: var(--ink); }
 .ac-btn--outline:hover { background: var(--ink); color: var(--on-ink); }
 .ac-btn--solid:hover { background: transparent; color: var(--ink); }
@@ -219,12 +234,6 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--focus); outline
 /* Tag */
 .ac-tag { display: inline-flex; align-items: center; height: 22px; padding: 0 var(--space-3); border: var(--stroke-hair) solid var(--rule); border-radius: var(--radius-pill); color: var(--ink); white-space: nowrap; }
 
-/* Stat */
-.ac-stat { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: var(--space-6); margin: 0; }
-.ac-stat__item { display: flex; flex-direction: column; gap: var(--space-4); align-items: flex-start; }
-.ac-stat__item dt, .ac-stat__value { margin: 0; }
-.ac-stat__suffix { color: var(--ink-muted); font-size: 0.5em; letter-spacing: 0; }
-
 /* Quote */
 .ac-quote { margin: 0; border-top: var(--stroke-hair) solid var(--rule); padding-top: var(--space-4); display: flex; flex-direction: column; gap: var(--space-4); }
 .ac-quote__n { color: var(--ink-muted); }
@@ -238,18 +247,13 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--focus); outline
 @media (max-width: 719px) { .ac-foot { flex-wrap: wrap; } .ac-foot__brand { flex-basis: 100%; } .ac-foot__col { flex-basis: 40%; } }
 
 /* ============================================================
-   PÁGINA · A Vida que Vem Depois
+   PÁGINA · Akitu: Ritual da Virada
    ============================================================ */
 
 .grid12 { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: var(--space-6); align-items: start; }
 .stack > * + * { margin-top: var(--space-5); }
 .muted { color: var(--ink-muted); }
 .text { max-width: var(--layout-text); }
-
-/* lista curta com ■ */
-.sq { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--space-3); }
-.sq li { display: grid; grid-template-columns: var(--space-5) 1fr; align-items: baseline; }
-.sq li::before { content: "■"; font-size: 0.6em; line-height: 1; }
 
 /* 00 · abertura */
 .hero__media { margin-bottom: var(--space-7); }
@@ -267,57 +271,37 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--focus); outline
 .ficha dt { color: var(--ink-muted); margin-bottom: var(--space-2); }
 .ficha .caption { display: block; margin-top: var(--space-1); color: var(--ink-muted); }
 
-/* 01 · pergunta (mesmo tamanho e peso da frase da abertura) */
+/* 01 · para que fazer esse ritual (frase no lugar do título: mesmo tamanho e peso da frase da abertura) */
 .pergunta { display: block; font-family: var(--font-sans); font-size: 45px; line-height: 1.02; font-weight: 700; letter-spacing: -0.03em; }
 @media (max-width: 719px) { .pergunta { font-size: 30px; line-height: 1.05; letter-spacing: -0.025em; } }
-.ask .subtitulo { max-width: 760px; }
-.marca { font-weight: 700; }
-.marca--nobreak { white-space: nowrap; }
-.seq { display: flex; flex-wrap: wrap; gap: var(--space-2) var(--space-3); width: fit-content; max-width: 100%; margin-top: var(--space-6); padding: var(--space-3) var(--space-4); background: var(--vermelho); color: var(--base-papel); font-weight: 700; }
-.seq span span { display: inline; }
-/* uma pergunta por linha: número à esquerda, texto à direita (no celular, número em cima) */
-.qs { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: 1fr; gap: var(--space-6); }
-.qs li { display: grid; grid-template-columns: 110px minmax(0, 1fr); align-items: center; gap: var(--space-5); }
-/* números 01 02 03: 73 px (celular 48 px), sem negrito, vermelho a 50% */
-.qs__n { font-family: var(--font-mono); font-size: 73px; line-height: 0.85; font-weight: 300; letter-spacing: -0.04em; color: var(--vermelho); opacity: 0.5; font-variant-numeric: tabular-nums slashed-zero; }
-/* perguntas: 1/3 maiores que o texto "Talvez..." (29 px; celular 25 px), sem negrito */
-.qs__t { max-width: 760px; font-family: var(--font-sans); font-size: 29px; line-height: 1.28; font-weight: 400; letter-spacing: -0.015em; }
-/* "É sobre perguntas...": mesmo tamanho das perguntas (29 px; celular 25 px), em negrito */
-.fecho { max-width: 760px; font-family: var(--font-sans); font-size: 29px; line-height: 1.28; font-weight: 700; letter-spacing: -0.015em; }
-@media (max-width: 719px) {
-  .qs { gap: var(--space-7); }
-  .qs li { display: flex; flex-direction: column; align-items: flex-start; gap: var(--space-4); }
-  .qs__n { font-size: 48px; }
-  .qs__t, .fecho { font-size: 25px; }
-}
-/* menos espaço entre o título da sessão e o texto */
-.ac-section.sec-perguntas .ac-section__inner > .ask { margin-top: var(--space-5); }
+/* menos espaço entre a frase e o texto que vem depois (o texto usa a formatação da sessão 02) */
+.ac-section.sec-perguntas .ac-section__inner > .ask { margin-top: var(--space-6); }
+.ask a { text-underline-offset: 3px; text-decoration-thickness: 1px; }
 
-/* 02 · o que é */
+/* 02 · o ritual e 03 · calendários (texto corrido, mesma formatação do primeiro parágrafo) */
 .what { max-width: 760px; }
 .what > p + p { margin-top: var(--space-5); }
-.band { background: var(--ink); color: var(--on-ink); padding: var(--space-5) var(--space-6); display: flex; gap: var(--space-5); align-items: center; }
-.band__ast { flex: none; width: 44px; height: 44px; }
 /* seta grossa desenhada (a fonte não tem o caractere →, então ele mudava de peso conforme o aparelho) */
 .what__arrow { display: inline-block; width: 0.95em; height: 0.66em; margin-right: 0.35em; vertical-align: 0; }
 
-/* 03 · percurso */
+/* 04 · como acontece */
 .cards3 { --ac-cols: 3; }
 /* sem degraus: números e imagens de cada linha alinhados na mesma altura, da esquerda para a direita */
-/* números 64 px, imagem quadrada 280 px, título na fonte do nome do workshop, descrição na fonte de datilografia (DM Mono) */
+/* números 64 px, título na fonte do nome do ritual, descrição na fonte de datilografia (DM Mono) */
 .cards3 .ac-ncard__index { font-size: 64px; letter-spacing: -0.04em; }
-/* cada etapa tem a largura da imagem: número, imagem, título e texto alinhados nas mesmas bordas */
+/* cada etapa tem 280 px de largura: número, título e texto alinhados nas mesmas bordas */
 .cards3 > li { width: 280px; max-width: 100%; }
-.cards3 .ac-media { width: 100%; }
+/* imagens com metade do tamanho, em todos os dispositivos (140 px no computador e no tablet; meia largura no celular) */
+.cards3 .ac-media { width: 50%; }
 .cards3 .ac-ncard__title { margin: var(--space-5) 0 var(--space-3); font-family: var(--font-sans); font-size: 22px; line-height: 1.05; font-weight: 900; letter-spacing: -0.03em; font-variation-settings: normal; }
 .cards3 .ac-ncard__text { font-family: var(--font-mono); font-size: 17px; line-height: 1.45; font-weight: 400; letter-spacing: 0.04em; text-transform: uppercase; color: var(--ink-muted); }
 
-/* 04 · material: quadro de 3 linhas x 2 colunas (celular: 6 x 1) */
+/* 05 · recebidos: quadro de 3 linhas x 2 colunas (celular: 6 x 1) */
 .ac-section .ac-section__inner > .kit { margin-top: var(--space-6); }
 .kit { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; border-top: var(--stroke-hair) solid var(--rule); }
 .kit li { position: relative; display: flex; align-items: center; gap: var(--space-5); padding: var(--space-6) var(--space-7) var(--space-6) var(--space-5); border-bottom: var(--stroke-hair) solid var(--rule); }
 .kit li::before { content: ""; position: absolute; left: 0; top: var(--space-5); bottom: var(--space-5); width: var(--stroke-hair); background: var(--rule); }
-/* pictogramas pixelados 16 x 16: 1/3 menores que antes (64 → 43 px; celular 48 → 32 px) */
+/* pictogramas pixelados 16 x 16 (43 px; celular 32 px) */
 .kit__ico { flex: none; width: 43px; height: 43px; color: var(--ink); }
 .kit__t { font-family: var(--font-sans); font-size: 18px; line-height: 1.4; font-weight: 500; }
 @media (max-width: 719px) {
@@ -328,12 +312,15 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--focus); outline
   .kit__t { font-size: 16px; }
 }
 
-/* 05 · ingressos */
-.offers { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-5); align-items: stretch; max-width: 1080px; }
+/* 06 · inscrições */
+.inscr__aviso { max-width: 760px; }
+.ac-section .ac-section__inner > .tk-solo { margin-top: var(--space-7); }
+/* um ingresso só: mesma largura de cada ingresso da página do workshop */
+.tk-solo { max-width: 528px; }
 /* ingresso em formato de ficha: caixas de fio, rótulos datilografados, picote antes do preço */
 .tk { background: var(--surface-raised); border: var(--stroke-hair) solid var(--rule); display: flex; flex-direction: column; }
 .tk__head { display: flex; justify-content: space-between; padding: var(--space-3) var(--space-4) 0; color: var(--ink-muted); }
-.tk__title { padding: var(--space-2) var(--space-4) var(--space-4); font-family: var(--font-sans); font-size: 26px; line-height: 1; font-weight: 800; letter-spacing: -0.02em; text-transform: uppercase; }
+.tk__title { padding: var(--space-2) var(--space-4) var(--space-4); font-family: var(--font-sans); font-size: 26px; line-height: 1; font-weight: 800; letter-spacing: -0.02em; text-transform: uppercase; text-align: left; }
 .tk__row { display: grid; grid-template-columns: 40px minmax(0, 1fr) 130px; border-top: var(--stroke-hair) solid var(--rule); }
 .tk__side { writing-mode: vertical-rl; transform: rotate(180deg); display: flex; align-items: center; justify-content: center; padding: var(--space-3) 0; border-left: var(--stroke-hair) solid var(--rule); letter-spacing: 0.12em; }
 .tk__cell { padding: var(--space-3) var(--space-4); }
@@ -353,34 +340,47 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--focus); outline
 .tk__stub { border-top: var(--stroke-hair) dashed var(--ink); padding: var(--space-4); display: flex; flex-direction: column; gap: var(--space-4); }
 .tk__value { font-family: var(--font-mono); font-size: 40px; line-height: 1; font-weight: 300; letter-spacing: -0.03em; font-variant-numeric: tabular-nums slashed-zero; }
 .tk__btn { width: 100%; justify-content: space-between; }
-/* três lotes lado a lado, cada um num quadradinho pontilhado */
+/* valor num quadradinho pontilhado (a grade de três é a mesma dos lotes do workshop) */
 .tk__lotes { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-2); }
 .tk__lote { display: flex; align-items: center; gap: var(--space-4); border: var(--stroke-hair) dotted var(--ink); padding: var(--space-3) var(--space-2); }
-/* "LOTE 01" deitado na vertical, como o "SÁBADO" do ingresso, para sobrar espaço para o valor */
+/* "A PARTIR DE" deitado na vertical, como o "SEGUNDA" do ingresso, para sobrar espaço para o valor */
 .tk__lote .tk__lab { margin: 0; writing-mode: vertical-rl; transform: rotate(180deg); letter-spacing: 0.12em; white-space: nowrap; }
-.tk__lote .tk__value { white-space: nowrap; }  /* mesmo tamanho do preço do ingresso gravado (40 px) */
-@media (max-width: 1100px) {
-  .offers { grid-template-columns: 1fr; max-width: 560px; }
-}
+.tk__lote .tk__value { white-space: nowrap; }
+/* valor único (R$77): número maior, para preencher o quadradinho em proporção com o "A PARTIR DE" deitado */
+.tk .tk__lote--unico .tk__value { font-size: 56px; }
+/* combo e equipe: dois quadradinhos-botão ao lado do valor, na mesma medida dele, num azul acinzentado */
+.tk__lote--botao { display: block; padding: var(--space-3); background: var(--combo); color: var(--destaque-texto); border: var(--stroke-hair) solid var(--combo); text-decoration: none; text-align: left; line-height: 15px; transition: background-color 160ms ease, border-color 160ms ease; }
+.tk__lote--botao:hover { background: var(--combo-hover); border-color: var(--combo-hover); }
+/* a seta encosta à direita, na última linha do texto (ou logo abaixo, se não couber) */
+.tk__seta { float: right; width: 18px; height: 12px; margin: 2px 0 0 var(--space-2); }
+/* combo: "COMBO 10% OFF" em destaque, no estilo do título do ingresso; nome do combo menor; o que ele inclui entre colchetes */
+.tk__combo-tag { display: block; font-family: var(--font-sans); font-size: 20px; line-height: 1; font-weight: 800; letter-spacing: -0.02em; text-transform: uppercase; }
+.tk__combo-nome { display: block; margin: var(--space-2) 0 var(--space-1); font-family: var(--font-sans); font-size: 14px; line-height: 1.1; font-weight: 700; letter-spacing: 0; text-transform: uppercase; }
 @media (max-width: 719px) {
-  .offers { max-width: none; }
   .tk__row { grid-template-columns: 34px minmax(0, 1fr) 96px; }
   .tk__title { font-size: 22px; }
   .tk__big { font-size: 26px; }
-  /* celular: os três lotes continuam lado a lado em quadrados iguais.
-     o "R$" sobe para cima do número e o valor cresce até o limite do quadrado (no máximo 40 px).
-     o preço do ingresso gravado acompanha o mesmo tamanho. */
+  /* celular: o quadrado do valor continua com um terço da largura.
+     o "R$" sobe para cima do número e o valor cresce até o limite do quadrado (no máximo 40 px). */
   .tk__lotes { gap: var(--space-2); }
   .tk__lote { padding: var(--space-3) 6px; gap: var(--space-2); }
   .tk .tk__value { font-size: min(40px, calc(((100vw - 98px) / 3 - 36px) / 1.75)); }
   .tk .tk__value .cur { display: block; margin: 0 0 4px; font-size: 13px; vertical-align: baseline; }
+  /* celular: valor e combo lado a lado, em quadrados de meia largura; o botão da equipe ocupa a linha de baixo inteira.
+     o "R$" volta para o lado do número, como no computador, e o valor cresce até no máximo 48 px. */
+  .tk__lotes { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .tk__lote--equipe { grid-column: 1 / -1; }
+  .tk__lote.tk__lote--unico { padding: var(--space-3) var(--space-2); gap: var(--space-3); }
+  .tk .tk__lote--unico .tk__value { font-size: min(48px, calc(((100vw - 90px) / 2 - 36px) / 1.8)); }
+  .tk .tk__lote--unico .tk__value .cur { display: inline; margin: 0 0.15em 0 0; font-size: 0.45em; vertical-align: 0.65em; }
+  .tk__lote.tk__lote--botao { padding: var(--space-3); }
   .tk__checks li { font-size: 13px; }
   .tk__cell { padding: var(--space-3); }
 }
 .cur { font-size: 0.45em; letter-spacing: 0; margin-right: 0.15em; vertical-align: 0.65em; }
 
-/* 06 · para quem */
-/* para quem é: dois quadros simples de fio fino (como a caixa de detalhes da abertura), com quadradinho ✓ ou × em cada item */
+/* 07 · para quem */
+/* dois quadros simples de fio fino (como a caixa de detalhes da abertura), com quadradinho ✓ ou × em cada item */
 .fit { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-5); align-items: stretch; }
 .fit__box { border: var(--stroke-hair) solid var(--rule); }
 .fit__title { padding: var(--space-4) var(--space-5); border-bottom: var(--stroke-hair) solid var(--rule); font-family: var(--font-sans); font-size: 22px; line-height: 1.25; font-weight: 700; letter-spacing: -0.01em; }
@@ -390,9 +390,15 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--focus); outline
 .fit__list li::before { content: ""; display: block; width: 14px; height: 14px; margin-top: 6px; border: var(--stroke-hair) solid var(--ink); }
 .fit__list--sim li::after { content: ""; position: absolute; left: calc(var(--pl) + 5px); top: calc(var(--space-4) + 7.5px); width: 4px; height: 8px; border-right: 2px solid var(--verde); border-bottom: 2px solid var(--verde); transform: rotate(45deg); }
 .fit__list--nao li::after { content: ""; position: absolute; left: calc(var(--pl) + 3px); top: calc(var(--space-4) + 9px); width: 8px; height: 8px;
-  background: linear-gradient(45deg, transparent 41%, var(--vermelho) 41%, var(--vermelho) 59%, transparent 59%), linear-gradient(-45deg, transparent 41%, var(--vermelho) 41%, var(--vermelho) 59%, transparent 59%); }
+  background: linear-gradient(45deg, transparent 38%, var(--azul) 38%, var(--azul) 62%, transparent 62%), linear-gradient(-45deg, transparent 38%, var(--azul) 38%, var(--azul) 62%, transparent 62%); }
 
-/* 07 · relatos */
+/* 08 · facilitadora: imagem quadrada com a mesma medida das imagens da sessão 04 */
+.bio { display: grid; grid-template-columns: 140px minmax(0, 760px); gap: var(--space-6); align-items: start; }
+.bio__media { width: 100%; }
+/* três parágrafos, com o mesmo espaço entre eles usado nas sessões 02 e 03 */
+.bio__text > p + p { margin-top: var(--space-5); }
+
+/* 09 · relatos */
 .quotes { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-8) var(--space-7); align-items: start; list-style: none; margin: 0; padding: var(--space-5) 0 0; }  /* cada papel com a altura do próprio relato */
 /* cada relato é um papelzinho preso com clipe, com uma folha atrás (sem sombra, como no resto do sistema) */
 .quotes > li { position: relative; display: flex; isolation: isolate; }
@@ -406,8 +412,8 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--focus); outline
 .nota__text { margin: 0; }
 .nota__by { margin-top: auto; color: var(--base-tinta); }
 
-/* 08 · dúvidas */
-/* perguntas frequentes: cada pergunta é um botão cru (borda de 1 px, igual aos outros fios do site), com + que vira − e abre a resposta logo abaixo */
+/* 10 · dúvidas */
+/* cada pergunta é um botão cru (borda de 1 px, igual aos outros fios do site), com + que vira − e abre a resposta logo abaixo */
 .faq { display: flex; flex-direction: column; gap: var(--space-4); max-width: 960px; }
 .faq__btn { display: flex; align-items: baseline; gap: var(--space-4); padding: var(--space-4) var(--space-5); border: var(--stroke-hair) solid var(--rule); background: transparent; color: var(--ink); cursor: pointer; list-style: none; transition: background-color 160ms ease; }
 .faq__btn::-webkit-details-marker { display: none; }
@@ -419,37 +425,18 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--focus); outline
 .faq__item[open] .faq__sinal::before { content: "\2212"; }
 .faq__q { flex: 1; font-weight: 700; }
 .faq__a { color: var(--ink); padding: var(--space-4) var(--space-5) var(--space-2) calc(var(--space-5) + 20px + var(--space-4) + 1px); }
+.faq__a a { text-underline-offset: 3px; }
 
-/* 09 · última chamada */
-.final { --hole-color: var(--surface); }
-/* mesma configuração do subtítulo da abertura (classe hero__headline); largura parecida com a coluna da abertura */
+/* 11 · última chamada */
+/* a citação usa a mesma configuração da frase da abertura (classe hero__headline) */
 .final__phrase { max-width: 760px; }
-.final__lead { max-width: 760px; color: var(--ink); font-size: 27px; }  /* mesma largura de "Talvez você não precise...": as duas alinham na esquerda e na direita */  /* mesmo tamanho de "Workshop de processos criativos..." */
+.final__by { margin-top: var(--space-5); color: var(--ink-muted); text-align: left; }
+.final__lead { max-width: 760px; color: var(--ink); font-size: 27px; }  /* mesma largura da citação e mesmo tamanho do texto de apoio da abertura */
 .final__cta { display: flex; justify-content: flex-start; max-width: 528px; }
 .final__cta .ac-btn { width: 100%; justify-content: space-between; }  /* mesma largura do ingresso acima */
-/* ingresso da última sessão: cópia do ingresso ao vivo, mesmo tamanho e cores, com o botão fora da caixa */
-.final__tk { max-width: 528px; margin-left: 0; margin-right: auto; color: var(--ink); }  /* alinhado à esquerda da página */
+/* ingresso da última sessão: cópia do ingresso da sessão 06, mesmo tamanho e cores, com o botão fora da caixa */
+.final__tk { max-width: 528px; margin-left: 0; margin-right: auto; color: var(--ink); }
 .final .ac-section__inner > .final__cta { margin-top: var(--space-6); }
-
-/* ingresso de cinema */
-.ticket { --hole: 30px; position: relative; display: grid; grid-template-columns: minmax(0, 1fr) 232px; max-width: 1040px; margin-left: auto; margin-right: auto; background: var(--surface); color: var(--ink); }
-.ticket__main { padding: var(--space-7); outline: var(--stroke-hair) solid var(--rule); outline-offset: -12px; display: flex; flex-direction: column; gap: var(--space-5); }
-.ticket__top { display: flex; justify-content: space-between; gap: var(--space-4); flex-wrap: wrap; color: var(--ink-muted); }
-.ticket__title { font-family: var(--font-sans); font-weight: 800; font-size: 60px; line-height: 0.92; letter-spacing: -0.045em; text-transform: uppercase; }
-.ticket__info { display: grid; grid-template-columns: repeat(4, auto); justify-content: start; border-top: var(--stroke-hair) solid var(--rule); padding-top: var(--space-4); }
-.ticket__info > div { padding-right: var(--space-5); margin-right: var(--space-5); border-right: var(--stroke-hair) solid var(--rule-soft); }
-.ticket__info > div:last-child { border-right: 0; margin-right: 0; padding-right: 0; }
-.ticket__info dt { color: var(--ink-muted); margin-bottom: var(--space-2); }
-.ticket__stub {
-  position: relative; padding: var(--space-7) var(--space-5); outline: var(--stroke-hair) solid var(--rule); outline-offset: -12px;
-  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: var(--space-3); text-align: center;
-  background-image: linear-gradient(var(--ink) 50%, transparent 0); background-size: 1px 8px; background-repeat: repeat-y; background-position: left top;
-}
-.ticket__stub::before, .ticket__stub::after { content: ""; position: absolute; left: calc(var(--hole) / -2); width: var(--hole); height: var(--hole); border-radius: 50%; background: var(--hole-color); }
-.ticket__stub::before { top: calc(var(--hole) / -2); }
-.ticket__stub::after { bottom: calc(var(--hole) / -2); }
-.ticket__stub .caption { color: var(--ink-muted); }
-.ticket__stub .numeral { font-size: 56px; }
 
 /* celular */
 @media (max-width: 719px) {
@@ -462,59 +449,25 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--focus); outline
   .hero__sub { margin-top: 0; }
   .ficha > div { padding: var(--space-3) var(--space-3) var(--space-4); }
   .ficha .typed { font-size: 14px; }
-  .br-d { display: none; }
-  .ac-stat { grid-template-columns: 1fr; gap: 0; }
-  .ac-stat__item { flex-direction: row; justify-content: space-between; align-items: center; padding: var(--space-4) 0; border-top: var(--stroke-hair) solid var(--rule-soft); }
-  .ac-stat__item:last-child { border-bottom: var(--stroke-hair) solid var(--rule-soft); }
-  .band { padding: var(--space-5); gap: var(--space-4); align-items: flex-start; }
-  .band__ast { width: 34px; height: 34px; margin-top: 2px; }
   .ac-ncard.cards3 { grid-template-columns: 1fr; gap: var(--space-7); }
-  .cards3 > li { width: 100%; }  /* celular: imagem e textos na largura toda, com a mesma margem do resto do site */
+  .cards3 > li { width: 100%; }  /* celular: textos na largura toda, com a mesma margem do resto do site; imagem com metade dessa largura */
   .cards3 .ac-ncard__index { font-size: 56px; }
   .cards3 .ac-ncard__title { margin: var(--space-4) 0 var(--space-2); }
   .fit { grid-template-columns: 1fr; }
   .fit__title { padding: var(--space-4); }
   .fit__list { --pl: var(--space-4); }
   .fit__list li { padding-right: var(--space-4); }
+  .bio { grid-template-columns: minmax(0, 1fr); gap: var(--space-5); }
+  .bio__media { width: 50%; }
   .quotes { grid-template-columns: 1fr; gap: var(--space-8); }
   .nota { padding: var(--space-7) var(--space-5) var(--space-5); }
   .nota__clip { left: var(--space-5); }
   .faq__btn { padding: var(--space-3) var(--space-4); gap: var(--space-3); }
   .faq__a { padding: var(--space-3) var(--space-4) var(--space-2) calc(var(--space-4) + 20px + var(--space-3) + 1px); }
-  .ticket { grid-template-columns: 1fr; }
-  .ticket__main { padding: var(--space-6) var(--space-5); }
-  .ticket__title { font-size: 38px; }
-  .ticket__info { grid-template-columns: 1fr 1fr; gap: var(--space-4) 0; }
-  .ticket__info > div { border-right: 0; margin-right: 0; padding-right: var(--space-3); }
-  .ticket__stub { padding: var(--space-6) var(--space-5); background-image: linear-gradient(90deg, var(--ink) 50%, transparent 0); background-size: 8px 1px; background-repeat: repeat-x; }
-  .ticket__stub::before { top: calc(var(--hole) / -2); left: calc(var(--hole) / -2); bottom: auto; }
-  .ticket__stub::after { top: calc(var(--hole) / -2); right: calc(var(--hole) / -2); left: auto; bottom: auto; }
 }
 @media (min-width: 720px) and (max-width: 1100px) {
   .cards3 { --ac-cols: 2; }
   .quotes { grid-template-columns: 1fr 1fr; }
-  .ticket__info { grid-template-columns: 1fr 1fr; gap: var(--space-4) 0; }
-  .ticket__info > div { border-right: 0; }
-}
-
-/* ingresso da última sessão em tablet e celular: as quatro informações num quadro 2 x 2 com divisórias,
-   como as divisórias da versão de computador, e o título sempre em duas linhas (A VIDA QUE / VEM DEPOIS) */
-.br-t { display: none; }
-@media (max-width: 1239px) { .br-t { display: inline; } }
-@media (max-width: 1100px) {
-  .ticket__info { grid-template-columns: 1fr 1fr; gap: 0; padding-top: 0; }
-  .ticket__info > div { margin: 0; padding: var(--space-4) var(--space-4) var(--space-4) 0; border-right: 0; }
-  .ticket__info > div:nth-child(odd) { border-right: var(--stroke-hair) solid var(--rule-soft); }
-  .ticket__info > div:nth-child(even) { padding-left: var(--space-4); padding-right: 0; }
-  .ticket__info > div:nth-child(-n+2) { border-bottom: var(--stroke-hair) solid var(--rule-soft); }
-}
-@media (max-width: 719px) {
-  .ticket__title { font-size: min(38px, calc((100vw - 120px) / 5.6)); }
-  .ticket__info > div { padding-top: var(--space-3); padding-bottom: var(--space-3); }
-  .ticket__info > div:nth-child(odd) { padding-right: var(--space-3); }
-  .ticket__info > div:nth-child(even) { padding-left: var(--space-3); }
-  .ticket__info .typed { font-size: min(13px, 3.35vw); }
-  .ticket__stub .numeral { font-size: 48px; }
 }
 </style>
 </head>
@@ -528,9 +481,9 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--focus); outline
   <div class="ac-mast__inner">
     <a class="ac-mast__brand lead" href="#topo">Escola Travessias</a>
     <ul class="ac-mast__meta field">
-      <li>[ workshop online ]</li>
-      <li>[ ao vivo + gravação opcional ]</li>
-      <li>[ domingo, 13.12.2026 ]</li>
+      <li>[ ritual coletivo ]</li>
+      <li>[ à distância ]</li>
+      <li>[ segunda, 21.12.2026 ]</li>
     </ul>
   </div>
 </header>
@@ -538,34 +491,34 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--focus); outline
 <main>
 
 <!-- ============================================================
-     SESSÃO 01 · CONVITE
+     SESSÃO 00 · CONVITE
      ============================================================ -->
 <section class="ac-section ac-section--hero" data-theme="papel">
   <div class="ac-section__inner">
     <div>
       <figure class="ac-media hero__media">
-        <div class="ac-media__frame r-convite" data-img="imagem01" data-alt="Imagem de convite do workshop A Vida que Vem Depois">
+        <div class="ac-media__frame r-convite" data-img="imagem01" data-alt="Imagem de convite do Akitu: Ritual da Virada">
           <span class="ac-media__ph caption">imagem01 · 2400 × 960 px · centro seguro</span>
           <span class="ac-media__bar ac-media__bar--left" aria-hidden="true"></span>
         </div>
       </figure>
 
       <div class="grid12 hero__grid">
-        <h1 class="display-l hero__title">A vida que<br> vem depois</h1>
+        <h1 class="display-l hero__title">Akitu</h1>
 
         <div class="hero__copy">
-          <p class="hero__headline">Conquiste a coragem de demolir estruturas ilusórias para construir uma vida que realmente faça sentido.</p>
-          <p class="lead subtitulo hero__sub">Workshop de processos criativos para trabalhar o encerramento de ciclos, investigar valores, rever escolhas e traçar recomeço.</p>
+          <p class="hero__headline">Ritual de Ano Novo inspirado nos ritos babilônicos.</p>
+          <p class="lead subtitulo hero__sub">Ritual da Virada no Solstício de Verão, para queimar o peso do passado e decretar as vitórias para o próximo ano.</p>
 
           <dl class="ficha">
-            <div><dt class="field">Data</dt><dd class="typed">Dom. 13.12.2026</dd></div>
-            <div><dt class="field">Horário</dt><dd class="typed"><span>9AM → 12PM</span><span class="caption">( Brasília )</span></dd></div>
-            <div><dt class="field">Formato</dt><dd class="typed">Online, ao vivo</dd></div>
-            <div><dt class="field">Gravação</dt><dd class="typed">Opcional</dd></div>
+            <div><dt class="field">Data</dt><dd class="typed">Seg. 21.12.2026</dd></div>
+            <div><dt class="field">Horário</dt><dd class="typed"><span>21h</span><span class="caption">( Brasília )</span></dd></div>
+            <div><dt class="field">Formato</dt><dd class="typed">Ritual coletivo</dd></div>
+            <div><dt class="field">Participação</dt><dd class="typed">À distância</dd></div>
           </dl>
 
           <div>
-            <a class="ac-btn ac-btn--destaque ac-btn--xl label" href="https://pay.hotmart.com/B108448449W?off=orwguqgz&amp;checkoutMode=10"><span>Quero participar</span><span aria-hidden="true">→</span></a>
+            <a class="ac-btn ac-btn--destaque ac-btn--xl label" href="https://pay.hotmart.com/E108613285W?off=0figcn62" data-checkout><span>Quero participar do ritual</span><span aria-hidden="true">→</span></a>
           </div>
         </div>
       </div>
@@ -574,204 +527,183 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--focus); outline
 </section>
 
 <!-- ============================================================
-     SESSÃO 02 · IDENTIFICAÇÃO
+     SESSÃO 01 · PARA QUE FAZER ESSE RITUAL
      ============================================================ -->
 <section class="ac-section sec-perguntas" data-theme="jornal">
   <div class="ac-section__inner">
     <div class="ac-sh">
-      <div class="ac-sh__top field"><span class="ac-sh__index">01</span><span>[ perguntas ]</span></div>
+      <div class="ac-sh__top field"><span class="ac-sh__index">01</span><span>[ para que fazer esse ritual ]</span></div>
       <div class="ac-sh__row ac-sh__row--sem-fio">
         <h2 class="ac-sh__title">
-          <span class="pergunta">Quantas escolhas da sua vida foram realmente suas?</span>
+          <span class="pergunta">Você conhece a sensação de final de ano da “esperança desconfiada”, aquele peso de poder ser mais um ano frustrado em que você não consegue completar nem metade das suas metas.</span>
         </h2>
       </div>
     </div>
 
-    <div class="ask">
-        <p class="lead subtitulo">Talvez você tenha aprendido que uma <strong class="marca marca--nobreak">vida bem-sucedida</strong> precisa seguir determinada ordem e que tentar qualquer possibilidade fora dessa lógica é sinônimo de fracasso, de utopias ilusórias e infantis, de <strong class="marca">pessoas revoltadas que apenas incomodam as outras.</strong></p>
-        <p class="seq typed" aria-label="estudar, trabalhar, casar, produzir, performar, conquistar, acumular">
-          <span><span aria-hidden="true">[ </span>estudar <span aria-hidden="true">→</span></span>
-          <span>trabalhar <span aria-hidden="true">→</span></span>
-          <span>casar <span aria-hidden="true">→</span></span>
-          <span>produzir <span aria-hidden="true">→</span></span>
-          <span>performar <span aria-hidden="true">→</span></span>
-          <span>conquistar <span aria-hidden="true">→</span></span>
-          <span>acumular<span aria-hidden="true"> ]</span></span>
-        </p>
+    <div class="ask what">
+      <p class="lead">Nós vamos tratar de forma mais prática sobre como fazer metas possíveis no workshop <a href="https://pay.hotmart.com/B108448449W?off=orwguqgz&amp;checkoutMode=10" data-link="workshop">A Vida que Vem Depois</a>, mas aqui a intenção é aprender a resgatar os ritos de forma simbólica, pois o ser humano é um animal de linguagem e símbolos; portanto, também é factível o poder subjetivo de ritualizar os fins.</p>
     </div>
-
-    <ol class="qs">
-        <li><span class="qs__n">01</span><p class="qs__t">Mas e quando as estruturas que organizam nossa vida deixam de fazer sentido?</p></li>
-        <li><span class="qs__n">02</span><p class="qs__t">E quando continuar seguindo a cartilha nos destrói por dentro, todos os dias?</p></li>
-        <li><span class="qs__n">03</span><p class="qs__t">E quando aquilo que um dia pareceu certo já não representa a pessoa que somos hoje?</p></li>
-    </ol>
-
-    <p class="fecho">É sobre perguntas como essas que vamos trabalhar.</p>
   </div>
 </section>
 
 <!-- ============================================================
-     SESSÃO 03 · OFERTA CLARA
+     SESSÃO 02 · O RITUAL
      ============================================================ -->
 <section class="ac-section" data-theme="papel">
   <div class="ac-section__inner">
     <div class="ac-sh">
-      <div class="ac-sh__top field"><span class="ac-sh__index">02</span><span>[ o workshop ]</span></div>
-      <div class="ac-sh__row"><h2 class="headline ac-sh__title">o que é esse workshop?</h2></div>
+      <div class="ac-sh__top field"><span class="ac-sh__index">02</span><span>[ o ritual ]</span></div>
+      <div class="ac-sh__row"><h2 class="headline ac-sh__title">O que era o Akitu?</h2></div>
     </div>
 
     <div class="what">
-      <p class="lead"><strong>A Vida que Vem Depois</strong> é um workshop de processos criativos desenvolvido para ajudar você a investigar ciclos, rever escolhas e objetivos e construir possibilidades de recomeço.</p>
-      <p class="lead"><svg class="what__arrow" viewBox="0 0 24 16" aria-hidden="true"><path d="M1 8h19M13.5 1.5 20.5 8l-7 6.5" fill="none" stroke="currentColor" stroke-width="3.2"/></svg>Durante 3 horas, vamos percorrer uma jornada de conceitos simbólicos, exercícios individuais e ferramentas de facilitação para explorar valores, reconhecer estruturas internas que precisam de reformas, avaliar decisões e transformar reflexões em ações possíveis.</p>
-      <p class="lead"><svg class="what__arrow" viewBox="0 0 24 16" aria-hidden="true"><path d="M1 8h19M13.5 1.5 20.5 8l-7 6.5" fill="none" stroke="currentColor" stroke-width="3.2"/></svg>O encontro tem uma narrativa inspirada em seis arcanos do tarô, utilizados como referências simbólicas para organizar o percurso.</p>
+      <p class="lead">Para os babilônios, o Akitu servia para renovar o pacto da sociedade diante da ordem do universo, celebrar o ciclo da vida e legitimar a conexão das pessoas com o trabalho dos Deuses de organizar o destino e o mundo.</p>
+      <p class="lead"><svg class="what__arrow" viewBox="0 0 24 16" aria-hidden="true"><path d="M1 8h19M13.5 1.5 20.5 8l-7 6.5" fill="none" stroke="currentColor" stroke-width="3.2"/></svg><strong>Nós faremos o mesmo!</strong></p>
+      <p class="lead">Na Babilônia, o festival durava doze dias e, antes de qualquer pedido para o futuro, os templos eram purificados; os sacerdotes, as ruas da cidade e os reis eram purificados. Em seguida, os sacerdotes executavam performances e cantos para conversar com os Deuses diante de todos, grandes procissões traziam imagens de diferentes Deuses para se encontrar no principal templo da principal cidade, onde eram entregues grandes oferendas, e, ao final de todos esses eventos, os oráculos traziam as mensagens dos céus sobre o destino do mundo para o próximo ano.</p>
+      <p class="lead"><svg class="what__arrow" viewBox="0 0 24 16" aria-hidden="true"><path d="M1 8h19M13.5 1.5 20.5 8l-7 6.5" fill="none" stroke="currentColor" stroke-width="3.2"/></svg><strong>Nós seguiremos a mesma ordem, em menor escala.</strong></p>
     </div>
-
-    <dl class="ac-stat">
-      <div class="ac-stat__item"><dt><span class="ac-tag label">Duração</span></dt><dd class="ac-stat__value numeral">03<span class="ac-stat__suffix"> horas</span></dd></div>
-      <div class="ac-stat__item"><dt><span class="ac-tag label">Jornada</span></dt><dd class="ac-stat__value numeral">06<span class="ac-stat__suffix"> etapas</span></dd></div>
-      <div class="ac-stat__item"><dt><span class="ac-tag label">Prática</span></dt><dd class="ac-stat__value numeral">06<span class="ac-stat__suffix"> exercícios</span></dd></div>
-    </dl>
-
-    <p class="band lead"><svg class="band__ast" viewBox="0 0 40 40" aria-hidden="true"><g stroke="currentColor" stroke-width="5"><path d="M20 2v36"/><path d="M4.4 11l31.2 18"/><path d="M4.4 29l31.2-18"/></g></svg><span>Não é necessário conhecer tarô para participar, toda a semiótica será explicada.</span></p>
   </div>
 </section>
 
 <!-- ============================================================
-     SESSÃO 04 · O QUE VAMOS FAZER
+     SESSÃO 03 · OS DIFERENTES CALENDÁRIOS
+     Mesma formatação de texto da sessão 02, sem setas.
+     ============================================================ -->
+<section class="ac-section" data-theme="jornal">
+  <div class="ac-section__inner">
+    <div class="ac-sh">
+      <div class="ac-sh__top field"><span class="ac-sh__index">03</span><span>[ os diferentes calendários ]</span></div>
+      <div class="ac-sh__row"><h2 class="headline ac-sh__title">Por que agora, por que no solstício?</h2></div>
+    </div>
+
+    <div class="what">
+      <p class="lead">Na Mesopotâmia, o Akitu acontecia principalmente na primavera. Mas cidades como Ur celebravam dois Akitu por ano: um na primavera e outro no outono. A festa sempre acompanhou o momento em que as pessoas sentiam a necessidade de encerrar para recomeçar.</p>
+      <p class="lead">Aqui no Hemisfério Sul, na nossa era, esse momento é agora, em dezembro. O solstício de verão cai no dia 21, às 17h50, no dia mais longo do ano. Então, esse ritual será uma adaptação contemporânea, construída por mim com base nas fontes antigas, e eu prefiro te contar quais são as adaptações que estamos fazendo do que fingir que estou replicando todos os detalhes de um ritual tradicional só para surfar o hype da fetichização do ancestral.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SESSÃO 04 · COMO ACONTECE
      ============================================================ -->
 <section class="ac-section" data-theme="areia" id="percurso">
   <span class="ac-section__mark numeral-ghost" aria-hidden="true">06</span>
   <div class="ac-section__inner">
     <div class="ac-sh">
-      <div class="ac-sh__top field"><span class="ac-sh__index">03</span><span>[ percurso ]</span></div>
-      <div class="ac-sh__row"><h2 class="headline ac-sh__title">o que vamos fazer?</h2></div>
+      <div class="ac-sh__top field"><span class="ac-sh__index">04</span><span>[ como acontece ]</span></div>
+      <div class="ac-sh__row"><h2 class="headline ac-sh__title">Como o ritual é realizado?</h2></div>
     </div>
 
     <ol class="ac-ncard cards3">
       <li>
         <p class="ac-ncard__index index" aria-hidden="true">01</p>
         <figure class="ac-media"><div class="ac-media__frame r-simbolo" data-img="imagem02" data-alt="Símbolo da etapa 01"><span class="ac-media__ph caption">imagem02 · 1:1</span></div></figure>
-        <h3 class="ac-ncard__title serif-title">Perceber e/ou aceitar o que precisa cair</h3>
-        <p class="ac-ncard__text caption">Reconhecer situações, relações, expectativas sociais, modelos de sucesso, culpas, obrigações e ideias herdadas que não fazem mais sentido.</p>
+        <h3 class="ac-ncard__title serif-title">Preparativos</h3>
+        <p class="ac-ncard__text caption">Na prévia, será enviado um PDF com instruções de gestos e preparativos simples para aqueles que desejarem replicar, em suas próprias casas, uma pequena parte do rito para se conectar de forma mais direta.</p>
       </li>
       <li>
         <p class="ac-ncard__index index" aria-hidden="true">02</p>
         <figure class="ac-media"><div class="ac-media__frame r-simbolo" data-img="imagem03" data-alt="Símbolo da etapa 02"><span class="ac-media__ph caption">imagem03 · 1:1</span></div></figure>
-        <h3 class="ac-ncard__title serif-title">Imaginar outras possibilidades</h3>
-        <p class="ac-ncard__text caption">Investigar valores, desejos e futuros que queremos experimentar.</p>
+        <h3 class="ac-ncard__title serif-title">Data e hora</h3>
+        <p class="ac-ncard__text caption">Na noite de 21 de dezembro, eu farei o ritual no meu altar, sem conexão e sem transmissão.</p>
       </li>
       <li>
         <p class="ac-ncard__index index" aria-hidden="true">03</p>
         <figure class="ac-media"><div class="ac-media__frame r-simbolo" data-img="imagem04" data-alt="Símbolo da etapa 03"><span class="ac-media__ph caption">imagem04 · 1:1</span></div></figure>
-        <h3 class="ac-ncard__title serif-title">Aprender a deixar para trás</h3>
-        <p class="ac-ncard__text caption">Reconhecer as perdas, os ganhos e as ambivalências envolvidas no amadurecimento.</p>
+        <h3 class="ac-ncard__title serif-title">Nomes dos participantes</h3>
+        <p class="ac-ncard__text caption">Todos os nomes serão purificados, e tudo o que travou o último ano será jogado no fogo. O seu nome completo é escrito, selado e pronunciado em voz alta diante dos Deuses, no mesmo momento em que os decretos são recitados, clamando por bênçãos para os nossos destinos no próximo ciclo.</p>
       </li>
       <li>
         <p class="ac-ncard__index index" aria-hidden="true">04</p>
         <figure class="ac-media"><div class="ac-media__frame r-simbolo" data-img="imagem05" data-alt="Símbolo da etapa 04"><span class="ac-media__ph caption">imagem05 · 1:1</span></div></figure>
-        <h3 class="ac-ncard__title serif-title">Aprender a sustentar as próprias escolhas</h3>
-        <p class="ac-ncard__text caption">Trabalhar limites, autonomia e a autorresponsabilidade das nossas escolhas diante das expectativas externas.</p>
+        <h3 class="ac-ncard__title serif-title">Sobre os clamores</h3>
+        <p class="ac-ncard__text caption">Os pedidos serão de chão firme para pisar e caminhos abertos para trilhar. Também será clamado por <i>ḫegallu</i>, palavra acadiana que descreve a fartura que flui como os grandes rios durante as cheias. Esse tipo de abundância se mede no que finalmente se move e se transforma, não apenas em conquistas na régua do sistema capitalista.</p>
       </li>
       <li>
         <p class="ac-ncard__index index" aria-hidden="true">05</p>
         <figure class="ac-media"><div class="ac-media__frame r-simbolo" data-img="imagem06" data-alt="Símbolo da etapa 05"><span class="ac-media__ph caption">imagem06 · 1:1</span></div></figure>
-        <h3 class="ac-ncard__title serif-title">Sonhar uma vida na qual eu queira estar</h3>
-        <p class="ac-ncard__text caption">Elaborar uma definição própria e autêntica de uma vida boa.</p>
+        <h3 class="ac-ncard__title serif-title">Oráculo 2027</h3>
+        <p class="ac-ncard__text caption">Após a finalização dos trabalhos, é realizada uma tiragem de tarot para trazer conselhos sobre posturas e comportamentos desejados para o próximo ano, que estejam alinhados com o direcionamento dos Deuses.</p>
       </li>
       <li>
         <p class="ac-ncard__index index" aria-hidden="true">06</p>
         <figure class="ac-media"><div class="ac-media__frame r-simbolo" data-img="imagem07" data-alt="Símbolo da etapa 06"><span class="ac-media__ph caption">imagem07 · 1:1</span></div></figure>
-        <h3 class="ac-ncard__title serif-title">Transformar intenção em movimento</h3>
-        <p class="ac-ncard__text caption">Transformar intenção em primeiros passos concretos que suportam a fluidez e a ressignificação ao longo do tempo.</p>
+        <h3 class="ac-ncard__title serif-title">Entrega dos materiais</h3>
+        <p class="ac-ncard__text caption">Fotos, áudios e vídeos do altar, das oferendas e também com relação ao ritual e a interpretação da leitura de tarot coletiva serão enviados no grupo de WhatsApp após a finalização do ritual.</p>
       </li>
     </ol>
   </div>
 </section>
 
 <!-- ============================================================
-     SESSÃO 05 · O QUE VOCÊ VAI LEVAR
+     SESSÃO 05 · RECEBIDOS
      ============================================================ -->
 <section class="ac-section" data-theme="papel">
   <div class="ac-section__inner">
     <div class="ac-sh">
-      <div class="ac-sh__top field"><span class="ac-sh__index">04</span><span>[ material ]</span></div>
-      <div class="ac-sh__row ac-sh__row--sem-fio"><h2 class="headline ac-sh__title">O que você vai ganhar</h2></div>
+      <div class="ac-sh__top field"><span class="ac-sh__index">05</span><span>[ recebidos ]</span></div>
+      <div class="ac-sh__row ac-sh__row--sem-fio"><h2 class="headline ac-sh__title">O que você recebe?</h2></div>
     </div>
 
     <ol class="kit">
-      <li><svg class="kit__ico" viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><path fill="currentColor" d="M6 2h4v1h-4zM6 3h4v1h-4zM1 4h3v1h-3zM6 4h4v1h-4zM12 4h3v1h-3zM1 5h3v1h-3zM12 5h3v1h-3zM1 6h3v1h-3zM5 6h6v1h-6zM12 6h3v1h-3zM4 7h8v1h-8zM0 8h3v1h-3zM4 8h8v1h-8zM13 8h3v1h-3zM0 9h3v1h-3zM4 9h8v1h-8zM13 9h3v1h-3zM0 10h3v1h-3zM4 10h8v1h-8zM13 10h3v1h-3zM0 11h3v1h-3zM4 11h8v1h-8zM13 11h3v1h-3zM0 12h3v1h-3zM4 12h8v1h-8zM13 12h3v1h-3z"/></svg><p class="kit__t">Uma experiência coletiva com a possibilidade de ouvir pessoas, compartilhar, falar e ser ouvido.</p></li>
-      <li><svg class="kit__ico" viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><path fill="currentColor" d="M7 1h2v1h-2zM2 2h7v1h-7zM2 3h9v1h-9zM2 4h7v1h-7zM7 5h2v1h-2zM7 6h7v1h-7zM5 7h9v1h-9zM7 8h7v1h-7zM7 9h2v1h-2zM7 10h2v1h-2zM7 11h2v1h-2zM7 12h2v1h-2zM7 13h2v1h-2zM5 14h6v1h-6z"/></svg><p class="kit__t">Ferramentas práticas para organizar escolhas, possibilidades e decisões.</p></li>
-      <li><svg class="kit__ico" viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><path fill="currentColor" d="M4 1h6v1h-6zM3 2h2v1h-2zM9 2h2v1h-2zM2 3h2v1h-2zM10 3h2v1h-2zM2 4h1v1h-1zM11 4h1v1h-1zM2 5h1v1h-1zM11 5h1v1h-1zM2 6h1v1h-1zM11 6h1v1h-1zM2 7h1v1h-1zM11 7h1v1h-1zM2 8h2v1h-2zM10 8h2v1h-2zM3 9h2v1h-2zM9 9h3v1h-3zM4 10h6v1h-6zM11 10h2v1h-2zM11 11h3v1h-3zM12 12h3v1h-3zM13 13h2v1h-2z"/></svg><p class="kit__t">Exercícios de investigação e clarificação sobre os seus valores pessoais e desafios.</p></li>
-      <li><svg class="kit__ico" viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><path fill="currentColor" d="M3 1h8v1h-8zM3 2h1v1h-1zM10 2h2v1h-2zM3 3h1v1h-1zM10 3h1v1h-1zM12 3h1v1h-1zM3 4h1v1h-1zM10 4h4v1h-4zM3 5h1v1h-1zM13 5h1v1h-1zM3 6h1v1h-1zM5 6h6v1h-6zM13 6h1v1h-1zM3 7h1v1h-1zM13 7h1v1h-1zM3 8h1v1h-1zM5 8h6v1h-6zM13 8h1v1h-1zM3 9h1v1h-1zM13 9h1v1h-1zM3 10h1v1h-1zM5 10h6v1h-6zM13 10h1v1h-1zM3 11h1v1h-1zM13 11h1v1h-1zM3 12h1v1h-1zM5 12h4v1h-4zM13 12h1v1h-1zM3 13h1v1h-1zM13 13h1v1h-1zM3 14h11v1h-11z"/></svg><p class="kit__t">PDF teórico do workshop.</p></li>
-      <li><svg class="kit__ico" viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><path fill="currentColor" d="M3 1h10v1h-10zM1 2h4v1h-4zM12 2h1v1h-1zM3 3h1v1h-1zM12 3h1v1h-1zM1 4h4v1h-4zM6 4h5v1h-5zM12 4h1v1h-1zM3 5h1v1h-1zM12 5h1v1h-1zM1 6h4v1h-4zM6 6h5v1h-5zM12 6h1v1h-1zM3 7h1v1h-1zM12 7h1v1h-1zM1 8h4v1h-4zM6 8h3v1h-3zM12 8h1v1h-1zM3 9h1v1h-1zM12 9h1v1h-1zM1 10h4v1h-4zM12 10h1v1h-1zM3 11h1v1h-1zM12 11h1v1h-1zM1 12h4v1h-4zM12 12h1v1h-1zM3 13h10v1h-10z"/></svg><p class="kit__t">Caderno digital com as atividades do encontro.</p></li>
-      <li><svg class="kit__ico" viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><path fill="currentColor" d="M1 1h14v1h-14zM1 2h1v1h-1zM14 2h1v1h-1zM1 3h1v1h-1zM6 3h1v1h-1zM14 3h1v1h-1zM1 4h1v1h-1zM6 4h2v1h-2zM14 4h1v1h-1zM1 5h1v1h-1zM6 5h3v1h-3zM14 5h1v1h-1zM1 6h1v1h-1zM6 6h4v1h-4zM14 6h1v1h-1zM1 7h1v1h-1zM6 7h3v1h-3zM14 7h1v1h-1zM1 8h1v1h-1zM6 8h2v1h-2zM14 8h1v1h-1zM1 9h1v1h-1zM6 9h1v1h-1zM14 9h1v1h-1zM1 10h1v1h-1zM14 10h1v1h-1zM1 11h14v1h-14zM6 12h4v1h-4zM4 13h8v1h-8z"/></svg><p class="kit__t">Gravação opcional para (re)assistir quando, onde e quantas vezes quiser.</p></li>
+      <!-- tabuinha com marcas de escrita cuneiforme -->
+      <li><svg class="kit__ico" viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><path fill="currentColor" d="M3 1h10v1h-10zM2 2h1v12h-1zM13 2h1v12h-1zM3 14h10v1h-10zM4 4h2v1h-2zM7 4h2v1h-2zM10 4h2v1h-2zM4 5h1v1h-1zM7 5h1v1h-1zM10 5h1v1h-1zM5 8h2v1h-2zM9 8h2v1h-2zM5 9h1v1h-1zM9 9h1v1h-1zM4 11h2v1h-2zM7 11h2v1h-2zM10 11h2v1h-2zM4 12h1v1h-1zM7 12h1v1h-1zM10 12h1v1h-1z"/></svg><p class="kit__t">Seu nome escrito, purificado, selado e abençoado no rito.</p></li>
+      <!-- grupo de pessoas -->
+      <li><svg class="kit__ico" viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><path fill="currentColor" d="M6 2h4v1h-4zM6 3h4v1h-4zM1 4h3v1h-3zM6 4h4v1h-4zM12 4h3v1h-3zM1 5h3v1h-3zM12 5h3v1h-3zM1 6h3v1h-3zM5 6h6v1h-6zM12 6h3v1h-3zM4 7h8v1h-8zM0 8h3v1h-3zM4 8h8v1h-8zM13 8h3v1h-3zM0 9h3v1h-3zM4 9h8v1h-8zM13 9h3v1h-3zM0 10h3v1h-3zM4 10h8v1h-8zM13 10h3v1h-3zM0 11h3v1h-3zM4 11h8v1h-8zM13 11h3v1h-3zM0 12h3v1h-3zM4 12h8v1h-8zM13 12h3v1h-3z"/></svg><p class="kit__t">Acesso ao grupo do Akitu no WhatsApp.</p></li>
+      <!-- tela com play -->
+      <li><svg class="kit__ico" viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><path fill="currentColor" d="M1 1h14v1h-14zM1 2h1v1h-1zM14 2h1v1h-1zM1 3h1v1h-1zM6 3h1v1h-1zM14 3h1v1h-1zM1 4h1v1h-1zM6 4h2v1h-2zM14 4h1v1h-1zM1 5h1v1h-1zM6 5h3v1h-3zM14 5h1v1h-1zM1 6h1v1h-1zM6 6h4v1h-4zM14 6h1v1h-1zM1 7h1v1h-1zM6 7h3v1h-3zM14 7h1v1h-1zM1 8h1v1h-1zM6 8h2v1h-2zM14 8h1v1h-1zM1 9h1v1h-1zM6 9h1v1h-1zM14 9h1v1h-1zM1 10h1v1h-1zM14 10h1v1h-1zM1 11h14v1h-14zM6 12h4v1h-4zM4 13h8v1h-8z"/></svg><p class="kit__t">Fotos, vídeos e áudios meus contando o que aconteceu no rito, entregues no grupo.</p></li>
+      <!-- carta de tarot -->
+      <li><svg class="kit__ico" viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><path fill="currentColor" d="M3 1h10v1h-10zM3 2h1v12h-1zM12 2h1v12h-1zM3 14h10v1h-10zM7 4h2v1h-2zM6 5h4v1h-4zM5 6h6v2h-6zM6 8h4v1h-4zM7 9h2v1h-2zM5 12h6v1h-6z"/></svg><p class="kit__t">Uma leitura de tarot coletiva para 2027, gravada logo depois do rito.</p></li>
+      <!-- documento -->
+      <li><svg class="kit__ico" viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><path fill="currentColor" d="M3 1h8v1h-8zM3 2h1v1h-1zM10 2h2v1h-2zM3 3h1v1h-1zM10 3h1v1h-1zM12 3h1v1h-1zM3 4h1v1h-1zM10 4h4v1h-4zM3 5h1v1h-1zM13 5h1v1h-1zM3 6h1v1h-1zM5 6h6v1h-6zM13 6h1v1h-1zM3 7h1v1h-1zM13 7h1v1h-1zM3 8h1v1h-1zM5 8h6v1h-6zM13 8h1v1h-1zM3 9h1v1h-1zM13 9h1v1h-1zM3 10h1v1h-1zM5 10h6v1h-6zM13 10h1v1h-1zM3 11h1v1h-1zM13 11h1v1h-1zM3 12h1v1h-1zM5 12h4v1h-4zM13 12h1v1h-1zM3 13h1v1h-1zM13 13h1v1h-1zM3 14h11v1h-11z"/></svg><p class="kit__t">Um PDF com passo a passo de preparação e gesto simples para você fazer em casa na mesma noite, enquanto eu realizo o ritual coletivo.</p></li>
+      <!-- placa de direção -->
+      <li><svg class="kit__ico" viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><path fill="currentColor" d="M7 1h2v1h-2zM2 2h7v1h-7zM2 3h9v1h-9zM2 4h7v1h-7zM7 5h2v1h-2zM7 6h7v1h-7zM5 7h9v1h-9zM7 8h7v1h-7zM7 9h2v1h-2zM7 10h2v1h-2zM7 11h2v1h-2zM7 12h2v1h-2zM7 13h2v1h-2zM5 14h6v1h-6z"/></svg><p class="kit__t">Conselhos e direcionamentos para começar o ano com mais leveza e menos obrigações.</p></li>
     </ol>
   </div>
 </section>
 
 <!-- ============================================================
-     SESSÃO 06 · POSSIBILIDADES DE COMPRA
-     Links de checkout da Hotmart: ao vivo nos botões de compra; gravado só no botão da versão gravada.
+     SESSÃO 06 · INSCRIÇÕES
+     Os botões de compra usam o link CHECKOUT, no topo do arquivo.
      ============================================================ -->
-<section class="ac-section" data-theme="jornal" id="ingressos">
+<section class="ac-section" data-theme="jornal" id="inscricoes">
   <div class="ac-section__inner">
     <div class="ac-sh">
-      <div class="ac-sh__top field"><span class="ac-sh__index">05</span><span>[ ingressos ]</span></div>
-      <div class="ac-sh__row"><h2 class="headline ac-sh__title">escolha como participar</h2></div>
+      <div class="ac-sh__top field"><span class="ac-sh__index">06</span><span>[ ingresso ]</span></div>
+      <div class="ac-sh__row"><h2 class="headline ac-sh__title">Inscrições</h2></div>
     </div>
 
-    <div class="offers">
+    <p class="lead inscr__aviso">As inscrições encerram dia 20, às 23h59, pois os nomes precisam ser escritos e preparados antes do rito; portanto, na data do ritual, não entra mais ninguém.</p>
+
+    <div class="tk-solo">
       <article class="tk">
         <div class="tk__head field"><span>Ingresso</span><span>Nº 01</span></div>
-        <h3 class="tk__title">Workshop ao vivo</h3>
+        <h3 class="tk__title">Ritual da Virada \\ Akitu</h3>
         <div class="tk__row">
-          <p class="tk__side field">Domingo</p>
-          <div class="tk__cell tk__main"><p class="field tk__lab">Data</p><p class="tk__big">13.12.2026</p></div>
+          <p class="tk__side field">Segunda</p>
+          <div class="tk__cell tk__main"><p class="field tk__lab">Data</p><p class="tk__big">21.12.2026</p></div>
           <div class="tk__stack">
-          <div class="tk__cell"><p class="field tk__lab">Início</p><p class="typed">9AM</p></div>
-          <div class="tk__cell"><p class="field tk__lab">Fim</p><p class="typed">12PM</p></div>
+          <div class="tk__cell"><p class="field tk__lab">Início</p><p class="typed">21h</p></div>
+          <div class="tk__cell"><p class="field tk__lab">Prazo</p><p class="typed">20.12</p></div>
           </div>
         </div>
         <div class="tk__cell tk__list">
           <p class="field tk__lab">Inclui</p>
           <ul class="tk__checks">
-            <li>Participação no encontro online.</li>
-            <li>Exercícios conduzidos em tempo real.</li>
-            <li>PDF + caderno digital exclusivo.</li>
-            <li>Possibilidade de compartilhar e fazer perguntas.</li>
-            <li>Gravação opcional direto na pág de compra.</li>
+            <li>Purificação e bênçãos do ritual.</li>
+            <li>Comunidade no WhatsApp.</li>
+            <li>Fotos, áudios e vídeos exclusivos do rito.</li>
+            <li>Leitura de tarot para 2027.</li>
+            <li>PDF de minirrito para replicar.</li>
+            <li>Aconselhamento e direcionamento para 2027.</li>
           </ul>
         </div>
         <div class="tk__stub">
-          <div class="tk__lotes"><div class="tk__lote"><p class="field tk__lab">Lote 01</p><p class="tk__value"><span class="cur">R$</span>97</p></div><div class="tk__lote"><p class="field tk__lab">Lote 02</p><p class="tk__value"><span class="cur">R$</span>127</p></div><div class="tk__lote"><p class="field tk__lab">Lote 03</p><p class="tk__value"><span class="cur">R$</span>149</p></div></div>
-          <a class="ac-btn ac-btn--destaque ac-btn--xl label tk__btn" href="https://pay.hotmart.com/B108448449W?off=orwguqgz&amp;checkoutMode=10"><span>Quero participar ao vivo</span><span aria-hidden="true">→</span></a>
-        </div>
-      </article>
-
-      <article class="tk">
-        <div class="tk__head field"><span>Ingresso</span><span>Nº 02</span></div>
-        <h3 class="tk__title">Workshop gravado</h3>
-        <div class="tk__row">
-          <p class="tk__side field">Gravado</p>
-          <div class="tk__cell tk__main"><p class="field tk__lab">Acesso</p><p class="tk__big">12 meses</p></div>
-          <div class="tk__stack">
-          <div class="tk__cell"><p class="field tk__lab">Pausar</p><p class="typed">Sim</p></div>
-          <div class="tk__cell"><p class="field tk__lab">Rever</p><p class="typed">Sim</p></div>
+          <div class="tk__lotes"><div class="tk__lote tk__lote--unico"><p class="field tk__lab">A partir de</p><p class="tk__value"><span class="cur">R$</span>77</p></div>
+            <a class="tk__lote tk__lote--botao field" href="https://pay.hotmart.com/O108614485S"><span class="tk__combo-tag">Combo 10%&nbsp;OFF&nbsp;\</span><span class="tk__combo-nome">A Grande Virada</span><span class="tk__combo-sub">[&nbsp;Oficina Criativa + Ritual de Ano&nbsp;Novo&nbsp;]</span><svg class="tk__seta" viewBox="0 0 24 16" aria-hidden="true"><path d="M1 8h19M13.5 1.5 20.5 8l-7 6.5" fill="none" stroke="currentColor" stroke-width="2.4"/></svg></a>
+            <a class="tk__lote tk__lote--botao tk__lote--equipe field" href="https://wa.me/message/EU4VCDBX7WORH1"><span>Se você já comprou o workshop e quer comprar o combo completo, clique aqui para falar com a nossa equipe.</span><svg class="tk__seta" viewBox="0 0 24 16" aria-hidden="true"><path d="M1 8h19M13.5 1.5 20.5 8l-7 6.5" fill="none" stroke="currentColor" stroke-width="2.4"/></svg></a>
           </div>
-        </div>
-        <div class="tk__cell tk__list">
-          <p class="field tk__lab">Inclui</p>
-          <ul class="tk__checks">
-            <li>Para quem prefere fazer no seu próprio ritmo.</li>
-            <li>Gravação integral do encontro.</li>
-            <li>PDF + caderno digital exclusivo.</li>
-            <li>Possibilidade de pausar e rever os exercícios.</li>
-            <li>Acesso por até 12 meses.</li>
-          </ul>
-        </div>
-        <div class="tk__stub">
-          <div class="tk__lotes"><div class="tk__lote"><p class="field tk__lab">Lote único</p><p class="tk__value"><span class="cur">R$</span>127</p></div></div>
-          <a class="ac-btn ac-btn--destaque ac-btn--xl label tk__btn" href="https://pay.hotmart.com/A108449310D?off=dliajbi7"><span>Comprar apenas a gravação</span><span aria-hidden="true">→</span></a>
+          <a class="ac-btn ac-btn--destaque ac-btn--xl label tk__btn" href="https://pay.hotmart.com/E108613285W?off=0figcn62" data-checkout><span>Quero participar do ritual</span><span aria-hidden="true">→</span></a>
         </div>
       </article>
     </div>
@@ -784,29 +716,29 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--focus); outline
 <section class="ac-section" data-theme="papel">
   <div class="ac-section__inner">
     <div class="ac-sh">
-      <div class="ac-sh__top field"><span class="ac-sh__index">06</span><span>[ para quem ]</span></div>
-      <div class="ac-sh__row"><h2 class="headline ac-sh__title">para quem é?</h2></div>
+      <div class="ac-sh__top field"><span class="ac-sh__index">07</span><span>[ para quem ]</span></div>
+      <div class="ac-sh__row"><h2 class="headline ac-sh__title">Para quem é?</h2></div>
     </div>
 
     <div class="fit">
       <div class="fit__box">
-        <h3 class="fit__title">É pra você que:</h3>
+        <h3 class="fit__title">É para você que:</h3>
         <ul class="fit__list fit__list--sim">
-          <li>Está questionando escolhas e modelos de vida mas não sabe para onde ir.</li>
-          <li>Sente que precisa encerrar ciclos ou rever estruturas e não sabe por onde começar.</li>
-          <li>Quer conhecer melhor seus desejos e valores mais profundos.</li>
-          <li>Está buscando caminhos autênticos e possíveis para recomeçar.</li>
-          <li>Deseja ferramentas que te ajudem a organizar reflexões e decisões.</li>
+          <li>Está cansado de virada de ano em formato de lista de metas.</li>
+          <li>Quer resgatar os rituais para acalmar sua vida cotidiana e acelerada.</li>
+          <li>Quer se reconectar com uma dimensão mais subjetiva e profunda de si mesmo.</li>
+          <li>Deseja encerrar as pendências emocionais e energéticas de 2026 antes de começar 2027.</li>
+          <li>Gosta de conhecer a procedência e o embasamento das práticas espirituais nas quais está se envolvendo.</li>
         </ul>
       </div>
       <div class="fit__box">
-        <h3 class="fit__title">Talvez não seja o que você procura se:</h3>
+        <h3 class="fit__title">Não é para você se:</h3>
         <ul class="fit__list fit__list--nao">
+          <li>Está procurando garantia de dinheiro, emprego ou amor de forma milagrosa.</li>
+          <li>Está buscando uma experiência sobrenatural para provar a eficácia do ritual.</li>
           <li>Espera receber respostas prontas sobre o que fazer da própria vida.</li>
           <li>Busca uma fórmula rápida para resolver problemas complexos.</li>
-          <li>Procura uma experiência de psicoterapia ou tratamento clínico.</li>
-          <li>Espera que alguém decida por você.</li>
-          <li>Não está pronto para olhar para si mesmo com honestidade radical sobre suas incoerências e, ao mesmo tempo, com compaixão e menos autojulgamentos.</li>
+          <li>Não está disposto a refletir e integrar esse processo como parte de uma jornada sem começo, meio e fim.</li>
         </ul>
       </div>
     </div>
@@ -814,124 +746,134 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--focus); outline
 </section>
 
 <!-- ============================================================
-     SESSÃO 08 · PROVA SOCIAL
-     Seis caixas provisórias. Troque nome e relato pelos depoimentos reais.
+     SESSÃO 08 · FACILITADORA
+     imagem08: quadrada, com a mesma medida das imagens da sessão 04.
+     ============================================================ -->
+<section class="ac-section" data-theme="jornal">
+  <div class="ac-section__inner">
+    <div class="ac-sh">
+      <div class="ac-sh__top field"><span class="ac-sh__index">08</span><span>[ facilitadora ]</span></div>
+      <div class="ac-sh__row"><h2 class="headline ac-sh__title">Quem conduz o ritual?</h2></div>
+    </div>
+
+    <div class="bio">
+      <figure class="ac-media bio__media"><div class="ac-media__frame r-simbolo" data-img="imagem08" data-alt="Amanda Avalon"><span class="ac-media__ph caption">imagem08 · 1:1</span></div></figure>
+      <div class="bio__text">
+        <p class="lead">Amanda Avalon é arquiteta, pesquisadora de diferentes perspectivas sagradas, sacerdotisa pagã, criadora, educadora e fundadora da Escola Travessias. Bacharela em Arquitetura e Urbanismo, é especialista em território e cultura, pós-graduada em Psicologia e Terapia Integrativa pela PUC-Rio e está cursando Mitologia Comparada pelo Instituto Dédalus.</p>
+        <p class="lead">Como palestrante e consultora, já levou sua mensagem para ambientes corporativos, como a multinacional Novo Nordisk, e para eventos como o Dia do Orgulho Pagão. Como facilitadora, já ministrou mais de 50 cursos e workshops desde 2019 e, como criadora de conteúdo, soma mais de 150 mil seguidores nas redes sociais.</p>
+        <p class="lead">Atualmente, atua como terapeuta, taróloga e comunicadora, guiando seu público e alunos na construção de um senso crítico e no resgate do propósito pessoal através de uma espiritualidade consciente, politizada e profundamente autêntica.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SESSÃO 09 · RELATOS
+     Relatos anônimos. Os dois mais longos foram resumidos com as palavras das próprias pessoas.
      ============================================================ -->
 <section class="ac-section" data-theme="areia">
   <div class="ac-section__inner">
     <div class="ac-sh">
-      <div class="ac-sh__top field"><span class="ac-sh__index">07</span><span>[ relatos ]</span></div>
-      <div class="ac-sh__row"><h2 class="headline ac-sh__title">o que outros alunos estão dizendo</h2></div>
+      <div class="ac-sh__top field"><span class="ac-sh__index">09</span><span>[ relatos ]</span></div>
+      <div class="ac-sh__row"><h2 class="headline ac-sh__title">O que outros alunos estão dizendo?</h2></div>
     </div>
 
     <ul class="quotes">
-      <li><figure class="nota"><svg class="nota__clip" viewBox="0 0 20 60" aria-hidden="true"><path d="M15 14V47a6 6 0 0 1-12 0V8a5 5 0 0 1 10 0V42a2 2 0 0 1-4 0V16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><blockquote class="nota__text body">“Obrigada, Amanda! Foi um trabalho muito bonito. Desde o primeiro exercício de escrita, entendi que o meu trabalho é plural, que não é fazendo uma coisa só, nem num sistema quadradinho cheio de regras. Já venho há muitos anos tentando construir esse caminho e sinto que agora finalmente entendi que esse é o momento de florescer mesmo. Obrigada.”</blockquote><figcaption class="nota__by label">Dayse Pessoa de Azevedo</figcaption></figure></li>
-      <li><figure class="nota"><svg class="nota__clip" viewBox="0 0 20 60" aria-hidden="true"><path d="M15 14V47a6 6 0 0 1-12 0V8a5 5 0 0 1 10 0V42a2 2 0 0 1-4 0V16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><blockquote class="nota__text body">“Achei que foi muito bonito. Como falei pra Amanda, eu já carrego há muito tempo muitos traumas, faço tratamento há muito tempo e estou também em um momento de transição de carreira, de muitos questionamentos e discussões internas. Mas esse momento trouxe uma luz muito grande. Queria compartilhar porque foi muito bonito mesmo.”</blockquote><figcaption class="nota__by label">Bruna Ferreira Tapia</figcaption></figure></li>
-      <li><figure class="nota"><svg class="nota__clip" viewBox="0 0 20 60" aria-hidden="true"><path d="M15 14V47a6 6 0 0 1-12 0V8a5 5 0 0 1 10 0V42a2 2 0 0 1-4 0V16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><blockquote class="nota__text body">“Sua didática é impressionante: você transmite um volume enorme de conhecimento de forma sistemática, inteligente e admirável. Foi muito interessante acompanhar esse processo. Fenomenal, incrível.”</blockquote><figcaption class="nota__by label">Beatriz Conti</figcaption></figure></li>
-      <li><figure class="nota"><svg class="nota__clip" viewBox="0 0 20 60" aria-hidden="true"><path d="M15 14V47a6 6 0 0 1-12 0V8a5 5 0 0 1 10 0V42a2 2 0 0 1-4 0V16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><blockquote class="nota__text body">“Primeiro que este espaço foi muito acolhedor, muito delicioso! Estou em um momento da minha vida de burnout, afastada do trabalho, e me sentia muito mal de ter abandonado a minha essência. Eu sinto tanta falta de ser essa essência da minha infância, que me fazia feliz, e pude reencontrá-la aqui. Eu só abracei muito essa Bruna. Parecia que ela era alguém que estava muito longe de mim por tanto tempo, e senti que estava em um espaço repleto de vida, de abundância de energia vital. Me recarreguei muito me encontrando com ela, que sou eu, e me recarreguei vendo aquela Bruna. Tenho depressão, estou em tratamento há anos, hoje em dia está super controlado, mas em um cenário de tantos abusos no trabalho, é muito difícil. Então estar com essa parte minha de novo foi o maior presente dessa noite. Que delícia isso, impagável.”</blockquote><figcaption class="nota__by label">Bruna Falcão</figcaption></figure></li>
-      <li><figure class="nota"><svg class="nota__clip" viewBox="0 0 20 60" aria-hidden="true"><path d="M15 14V47a6 6 0 0 1-12 0V8a5 5 0 0 1 10 0V42a2 2 0 0 1-4 0V16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><blockquote class="nota__text body">“Nossa, foi muito incrível, de fato foi inesperado. Passei por vários momentos de altos e baixos, de saída de depressão, de burnout... Nós fizemos um atendimento no começo do ano e eu estava pedindo socorro, precisando dar um rumo para tudo o que estava sentindo. No atendimento, você me disse que as mudanças logo iam acontecer e, em questão de dois ou três meses, eu fiz o movimento. Agora estou aqui. Está um caos, muitas coisas para resolver ainda, mas este encontro, este exercício de imaginação de pensar qual é o caminho para onde estamos indo e o que faz sentido para a gente mesmo, né? Porque existem tantas coisas que vamos tentando cumprir, que soltar foi uma libertação. Chorei de felicidade, de alívio de várias coisas ao mesmo tempo. Era tudo o que eu estava precisando. Eu nem sabia se ia participar, mas meu aniversário foi há dois dias, então estou renascendo mesmo. Gratidão, foi muito bom.”</blockquote><figcaption class="nota__by label">Mariana Sierra</figcaption></figure></li>
-      <li><figure class="nota"><svg class="nota__clip" viewBox="0 0 20 60" aria-hidden="true"><path d="M15 14V47a6 6 0 0 1-12 0V8a5 5 0 0 1 10 0V42a2 2 0 0 1-4 0V16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><blockquote class="nota__text body">“Eu não imaginei que fosse entrar em um estado tão profundo, sinceramente. Tive visões muito simbólicas para mim e encontrei, literalmente, a minha essência antes dos traumas, aquilo que foi apagado por esses abusos. Entendi o que está dentro de mim, que estava escondido, nublado. Foi uma experiência única, porque eu já tinha feito meditações guiadas, mas sempre havia alguma interferência. O que encontrei hoje foi o estado mais puro com o qual eu poderia ter contato. Estou muito grata pelo encontro de hoje.”</blockquote><figcaption class="nota__by label">Julia Bertuol Boezzio</figcaption></figure></li>
+      <li><figure class="nota"><svg class="nota__clip" viewBox="0 0 20 60" aria-hidden="true"><path d="M15 14V47a6 6 0 0 1-12 0V8a5 5 0 0 1 10 0V42a2 2 0 0 1-4 0V16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><blockquote class="nota__text body">“Oi, Avalon!!! Hoje tá sendo um dia bem emotivo por aqui, então acho que muitas coisas têm influenciado, masssss, li o PDF do ritual e, enquanto eu tava lendo, fui sentindo meu corpo vibrar levemente, como se eu não tivesse mais conectada com o externo, aquelas sensações doidas da espiritualidade que a gente não sabe explicar, sabe? Eu até tive dificuldade de me concentrar na leitura quando essa sensação começou... Enfim, sua magia é poderosa! Obrigada por se colocar a serviço para a gente!”</blockquote><figcaption class="nota__by label">Anônimo</figcaption></figure></li>
+      <li><figure class="nota"><svg class="nota__clip" viewBox="0 0 20 60" aria-hidden="true"><path d="M15 14V47a6 6 0 0 1-12 0V8a5 5 0 0 1 10 0V42a2 2 0 0 1-4 0V16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><blockquote class="nota__text body">“Dia 24, tive uma das maiores crises de ansiedade que eu já tive na vida. Chorei tanto, vieram tantos atravessamentos que eu pedi arrego. No outro dia, entendi que era o ritual, e que as questões que eu estava internalizando precisavam sair. Meu seminamorado me trouxe doce de figo caramelizado e, no dia do ritual, entendi que Inanna queria figo e mel. Tá bom, Deusa, vai ter. Na hora do rito, conversei com ela, me apresentei, fiz uma taça linda pra ela e ofereci o que eu tinha ali. Foi e está sendo forte, intenso e realmente mágico. Nunca comi um figo com a boca tão gostosa. Tô exalando sensualidade, até minha pele tava numa sensibilidade diferente (e aqui devo dizer que queria ser mais explícita, mas te respeito muito, Mamys, kkkkkk).”</blockquote><figcaption class="nota__by label">Anônimo</figcaption></figure></li>
+      <li><figure class="nota"><svg class="nota__clip" viewBox="0 0 20 60" aria-hidden="true"><path d="M15 14V47a6 6 0 0 1-12 0V8a5 5 0 0 1 10 0V42a2 2 0 0 1-4 0V16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><blockquote class="nota__text body">“Amanda, muito obrigada por esse rito, foi muito simbólico para mim. Obrigada por esse trabalho maravilhoso e por toda essa energia que você movimentou. Espero poder participar de outros rituais! Não poderia também deixar de agradecer por todo o seu trabalho, é uma honra poder acompanhar a sua jornada e me inspirar nessa bruxona braba que você é!”</blockquote><figcaption class="nota__by label">Anônimo</figcaption></figure></li>
+      <li><figure class="nota"><svg class="nota__clip" viewBox="0 0 20 60" aria-hidden="true"><path d="M15 14V47a6 6 0 0 1-12 0V8a5 5 0 0 1 10 0V42a2 2 0 0 1-4 0V16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><blockquote class="nota__text body">“Eu quero te agradecer pelo convite (porque SIM, pra mim, foi um convite) em participar desse ritual, por me apresentar essa Deusa que se manifesta de forma leve, forte e diferente. Estou confiante que ainda tenho um caminho pela frente, mas sem sombra de dúvidas: hoje tudo o que eu aprendo na prática e no entendimento espiritual/<wbr>psíquico é graças a você! Obrigada por existir na minha vida e ser realmente essa sacerdote do caminho, do acolhimento e das bruxas de forma tão bonita e responsável. Obrigada, Amanda! Com todo meu amor e coração.”</blockquote><figcaption class="nota__by label">Anônimo</figcaption></figure></li>
+      <li><figure class="nota"><svg class="nota__clip" viewBox="0 0 20 60" aria-hidden="true"><path d="M15 14V47a6 6 0 0 1-12 0V8a5 5 0 0 1 10 0V42a2 2 0 0 1-4 0V16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><blockquote class="nota__text body">“As mudanças começaram logo depois que me inscrevi no rito. Eu vinha tendo pesadelos recorrentes, estava esgotada e tinha perdido a libido e o prazer de viver. Alguns dias depois, os pesadelos pararam, e a libido voltou na quinta-feira anterior ao rito. Eu cultuo Hathor, que tem sincretismos com Inanna, e naquela quinta senti e ouvi Ela pela primeira vez em semanas. Ela me cobrou uma responsabilidade de que venho fugindo há meses, por achar que nunca estou pronta. Meus pesadelos eram todos sobre estar fugindo de algo. No dia do rito, assei um pão como oferenda, acendi uma vela vermelha e não fiz nenhum pedido: lembrei da sua leitura da Roda da Fortuna e deixei a porta aberta para o que tivesse que se movimentar.”</blockquote><figcaption class="nota__by label">Anônimo</figcaption></figure></li>
     </ul>
   </div>
 </section>
 
 <!-- ============================================================
-     SESSÃO 09 · DÚVIDAS
+     SESSÃO 10 · DÚVIDAS
      ============================================================ -->
 <section class="ac-section" data-theme="papel" id="duvidas">
   <div class="ac-section__inner">
     <div class="ac-sh">
-      <div class="ac-sh__top field"><span class="ac-sh__index">08</span><span>[ dúvidas ]</span></div>
-      <div class="ac-sh__row"><h2 class="headline ac-sh__title">perguntas frequentes</h2></div>
+      <div class="ac-sh__top field"><span class="ac-sh__index">10</span><span>[ dúvidas ]</span></div>
+      <div class="ac-sh__row"><h2 class="headline ac-sh__title">Perguntas frequentes</h2></div>
     </div>
 
     <div class="faq">
       <details class="faq__item">
-        <summary class="faq__btn"><span class="faq__sinal" aria-hidden="true"></span><span class="faq__q lead">Preciso conhecer tarô para participar?</span></summary>
-        <p class="faq__a lead">Não. Os seis arcanos entram como referência simbólica e toda a semiótica é explicada no encontro.</p>
+        <summary class="faq__btn"><span class="faq__sinal" aria-hidden="true"></span><span class="faq__q lead">Preciso estar online na hora do rito?</span></summary>
+        <p class="faq__a lead">Não. O rito é feito por mim, e você recebe tudo no grupo. Se quiser, pode fazer os gestos simples, que serão indicados em um PDF preparatório, em casa, no mesmo horário.</p>
       </details>
       <details class="faq__item">
-        <summary class="faq__btn"><span class="faq__sinal" aria-hidden="true"></span><span class="faq__q lead">O encontro é ao vivo ou gravado?</span></summary>
-        <p class="faq__a lead">Ao vivo e online, no dia 13 de dezembro, das 9AM às 12PM. Mas você pode adicionar a gravação direto no checkout e também dá para comprar só a versão gravada.</p>
+        <summary class="faq__btn"><span class="faq__sinal" aria-hidden="true"></span><span class="faq__q lead">Posso colocar o nome de outra pessoa?</span></summary>
+        <p class="faq__a lead">Não. Cada pessoa deve fazer sua própria inscrição por livre e espontânea vontade. Trabalhos espirituais devem ser realizados com o total consentimento e autorresponsabilidade de quem participa.</p>
       </details>
       <details class="faq__item">
-        <summary class="faq__btn"><span class="faq__sinal" aria-hidden="true"></span><span class="faq__q lead">E se eu não puder participar no dia?</span></summary>
-        <p class="faq__a lead">Você pode comprar apenas a versão gravada do Workshop para assistir quando, onde e quantas vezes você quiser.</p>
+        <summary class="faq__btn"><span class="faq__sinal" aria-hidden="true"></span><span class="faq__q lead">Isso tem a ver com alguma religião?</span></summary>
+        <p class="faq__a lead">O rito se baseia na religião da antiga Mesopotâmia, adaptado por mim como prática pagã contemporânea, pois estudo há 5 anos o reconstrucionismo assírio e sou sacerdotisa de Inanna. Ninguém precisa se converter a nada para participar.</p>
       </details>
       <details class="faq__item">
-        <summary class="faq__btn"><span class="faq__sinal" aria-hidden="true"></span><span class="faq__q lead">Vou receber o material de apoio?</span></summary>
-        <p class="faq__a lead">Sim! O PDF teórico e o caderno digital fazem parte do pacote da experiência.</p>
+        <summary class="faq__btn"><span class="faq__sinal" aria-hidden="true"></span><span class="faq__q lead">E se eu me arrepender de participar?</span></summary>
+        <p class="faq__a lead">Você tem 7 dias de garantia pela plataforma, contados da compra. Caso esse prazo seja excedido, você pode entrar em contato direto pelo número <a href="https://wa.me/5521996415685">+55 21 99641-5685</a> para pedir para retirar o seu nome do ritual, porém o valor investido não será devolvido.</p>
       </details>
       <details class="faq__item">
-        <summary class="faq__btn"><span class="faq__sinal" aria-hidden="true"></span><span class="faq__q lead">Quanto tempo terei acesso à gravação?</span></summary>
-        <p class="faq__a lead">Até 12 meses, para assistir quando e quantas vezes quiser.</p>
-      </details>
-      <details class="faq__item">
-        <summary class="faq__btn"><span class="faq__sinal" aria-hidden="true"></span><span class="faq__q lead">Preciso compartilhar questões pessoais com o grupo?</span></summary>
-        <p class="faq__a lead">Não. Os exercícios são individuais e você compartilha só se quiser.</p>
-      </details>
-      <details class="faq__item">
-        <summary class="faq__btn"><span class="faq__sinal" aria-hidden="true"></span><span class="faq__q lead">O workshop é uma experiência terapêutica?</span></summary>
-        <p class="faq__a lead">Não é psicoterapia nem tratamento clínico. É um workshop de processos criativos voltado ao autoconhecimento.</p>
-      </details>
-      <details class="faq__item">
-        <summary class="faq__btn"><span class="faq__sinal" aria-hidden="true"></span><span class="faq__q lead">Como recebo o acesso depois da compra?</span></summary>
-        <p class="faq__a lead">Pelo e-mail informado na compra, logo após a confirmação do pagamento.</p>
-      </details>
-      <details class="faq__item">
-        <summary class="faq__btn"><span class="faq__sinal" aria-hidden="true"></span><span class="faq__q lead">Posso parcelar?</span></summary>
-        <p class="faq__a lead">Sim, no cartão de crédito, direto na página de pagamento.</p>
+        <summary class="faq__btn"><span class="faq__sinal" aria-hidden="true"></span><span class="faq__q lead">Quando recebo o material?</span></summary>
+        <p class="faq__a lead">O material prévio você recebe até dia 18 de dezembro, e o material com o resultado do rito, até 23 de dezembro, no grupo de WhatsApp.</p>
       </details>
     </div>
   </div>
 </section>
 
 <!-- ============================================================
-     SESSÃO 10 · ÚLTIMA CHAMADA
+     SESSÃO 11 · ÚLTIMA CHAMADA
      ============================================================ -->
 <section class="ac-section final" data-theme="preto">
   <div class="ac-section__inner">
-    <div class="stack">
-      <p class="hero__headline final__phrase">Talvez você não precise de mais metas de sucesso para tentar cumprir. Talvez precise de espaço para questionar os caminhos que aprendeu a seguir.</p>
-    </div>
-    <p class="lead final__lead">A vida que vem depois começa quando você se permite investigar o que de fato merece a sua energia, o que precisa virar memória de vez e o que ainda pode ser construído com os caquinhos e troféus do passado.</p>
+    <figure class="stack">
+      <blockquote class="hero__headline final__phrase">“Os rituais geram uma comunidade sem comunicação. Hoje, ao contrário, domina a comunicação sem comunidade.”</blockquote>
+      <figcaption class="field final__by">[ Byung-Chul Han · O desaparecimento dos rituais ]</figcaption>
+    </figure>
+    <p class="lead final__lead">Talvez você precise de mais introspecção e menos obrigação para começar a navegar uma vida com mais sentido pra você.</p>
 
     <div class="final__tk" data-theme="jornal">
       <article class="tk">
         <div class="tk__head field"><span>Ingresso</span><span>Nº 01</span></div>
-        <h3 class="tk__title">Workshop ao vivo</h3>
+        <h3 class="tk__title">Ritual da Virada \\ Akitu</h3>
         <div class="tk__row">
-          <p class="tk__side field">Domingo</p>
-          <div class="tk__cell tk__main"><p class="field tk__lab">Data</p><p class="tk__big">13.12.2026</p></div>
+          <p class="tk__side field">Segunda</p>
+          <div class="tk__cell tk__main"><p class="field tk__lab">Data</p><p class="tk__big">21.12.2026</p></div>
           <div class="tk__stack">
-          <div class="tk__cell"><p class="field tk__lab">Início</p><p class="typed">9AM</p></div>
-          <div class="tk__cell"><p class="field tk__lab">Fim</p><p class="typed">12PM</p></div>
+          <div class="tk__cell"><p class="field tk__lab">Início</p><p class="typed">21h</p></div>
+          <div class="tk__cell"><p class="field tk__lab">Prazo</p><p class="typed">20.12</p></div>
           </div>
         </div>
         <div class="tk__cell tk__list">
           <p class="field tk__lab">Inclui</p>
           <ul class="tk__checks">
-            <li>Participação no encontro online.</li>
-            <li>Exercícios conduzidos em tempo real.</li>
-            <li>PDF + caderno digital exclusivo.</li>
-            <li>Possibilidade de compartilhar e fazer perguntas.</li>
-            <li>Gravação opcional direto na pág de compra.</li>
+            <li>Purificação e bênçãos do ritual.</li>
+            <li>Comunidade no WhatsApp.</li>
+            <li>Fotos, áudios e vídeos exclusivos do rito.</li>
+            <li>Leitura de tarot para 2027.</li>
+            <li>PDF de minirrito para replicar.</li>
+            <li>Aconselhamento e direcionamento para 2027.</li>
           </ul>
         </div>
         <div class="tk__stub">
-          <div class="tk__lotes"><div class="tk__lote"><p class="field tk__lab">Lote 01</p><p class="tk__value"><span class="cur">R$</span>97</p></div><div class="tk__lote"><p class="field tk__lab">Lote 02</p><p class="tk__value"><span class="cur">R$</span>127</p></div><div class="tk__lote"><p class="field tk__lab">Lote 03</p><p class="tk__value"><span class="cur">R$</span>149</p></div></div>
+          <div class="tk__lotes"><div class="tk__lote tk__lote--unico"><p class="field tk__lab">A partir de</p><p class="tk__value"><span class="cur">R$</span>77</p></div>
+            <a class="tk__lote tk__lote--botao field" href="https://pay.hotmart.com/O108614485S"><span class="tk__combo-tag">Combo 10%&nbsp;OFF&nbsp;\</span><span class="tk__combo-nome">A Grande Virada</span><span class="tk__combo-sub">[&nbsp;Oficina Criativa + Ritual de Ano&nbsp;Novo&nbsp;]</span><svg class="tk__seta" viewBox="0 0 24 16" aria-hidden="true"><path d="M1 8h19M13.5 1.5 20.5 8l-7 6.5" fill="none" stroke="currentColor" stroke-width="2.4"/></svg></a>
+            <a class="tk__lote tk__lote--botao tk__lote--equipe field" href="https://wa.me/message/EU4VCDBX7WORH1"><span>Se você já comprou o workshop e quer comprar o combo completo, clique aqui para falar com a nossa equipe.</span><svg class="tk__seta" viewBox="0 0 24 16" aria-hidden="true"><path d="M1 8h19M13.5 1.5 20.5 8l-7 6.5" fill="none" stroke="currentColor" stroke-width="2.4"/></svg></a>
+          </div>
         </div>
       </article>
     </div>
 
     <div class="final__cta">
-      <a class="ac-btn ac-btn--destaque ac-btn--xl label" href="https://pay.hotmart.com/B108448449W?off=orwguqgz&amp;checkoutMode=10"><span>Garantir o meu ingresso</span><span aria-hidden="true">→</span></a>
+      <a class="ac-btn ac-btn--destaque ac-btn--xl label" href="https://pay.hotmart.com/E108613285W?off=0figcn62" data-checkout><span>Quero participar do ritual</span><span aria-hidden="true">→</span></a>
     </div>
 
     <footer class="ac-foot">
       <p class="ac-foot__brand body-s">Amanda Avalon · Escola Travessias</p>
-      <p class="ac-foot__col caption"><span>A vida que vem depois</span><span>Workshop online</span></p>
-      <p class="ac-foot__col caption"><span>13.12.2026</span><span>9AM → 12PM</span></p>
+      <p class="ac-foot__col caption"><span>Akitu</span><span>Ritual da Virada</span></p>
+      <p class="ac-foot__col caption"><span>21.12.2026</span><span>21h</span></p>
       <p class="ac-foot__col caption"><span>( 2026 )</span><span>Todos os direitos reservados</span></p>
     </footer>
   </div>
@@ -940,6 +882,19 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--focus); outline
 </main>
 
 <script>
+/* ============================================================
+   LINKS
+   Aplica os links definidos no topo do arquivo (CHECKOUT e WORKSHOP).
+   ============================================================ */
+(function () {
+  if (typeof CHECKOUT === "string" && CHECKOUT.trim()) {
+    Array.prototype.forEach.call(document.querySelectorAll("[data-checkout]"), function (a) { a.href = CHECKOUT.trim(); });
+  }
+  if (typeof WORKSHOP === "string" && WORKSHOP.trim()) {
+    Array.prototype.forEach.call(document.querySelectorAll('[data-link="workshop"]'), function (a) { a.href = WORKSHOP.trim(); });
+  }
+})();
+
 /* ============================================================
    IMAGENS
    Cada bloco com data-img="imagem01" procura o arquivo com esse
